@@ -165,6 +165,7 @@
     <button class="pharm-btn" data-pharm="khangKhuan" style="--c:#6d28d9;--bg:#ede9fe" onclick="setPharm('khangKhuan')"><span class="pharm-icon">🦠</span>Kháng khuẩn</button>
     <button class="pharm-btn" data-pharm="da" style="--c:#ec4899;--bg:#fce7f3" onclick="setPharm('da')"><span class="pharm-icon">✨</span>Làm đẹp da</button>
     <button class="pharm-btn" data-pharm="stress" style="--c:#0369a1;--bg:#e0f2fe" onclick="setPharm('stress')"><span class="pharm-icon">🧘</span>Chống stress</button>
+    <button class="pharm-btn" data-pharm="than" style="--c:#0ea5e9;--bg:#e0f2fe" onclick="setPharm('than')"><span class="pharm-icon">🫘</span>Bảo vệ thận</button>
     <button class="pharm-clear" onclick="setPharm(null)">✕ Bỏ lọc hoạt tính</button>
   </div>
 </div>
@@ -177,6 +178,10 @@
   <span class="abs-chip tag-abs-ratthap">Rất thấp &lt;1%</span>
 </div>
 
+<div id="thanNote" style="display:none;margin:8px 12px 0;background:#e0f2fe;border:1.5px solid #0ea5e9;border-radius:10px;padding:10px 12px;">
+  <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px;">⚕️ Lưu ý y tế — Suy thận</div>
+  <div style="font-size:11px;color:#0c4a6e;line-height:1.6;">Các saponin này có bằng chứng <b>bảo vệ tế bào thận</b> trong nghiên cứu. Tuy nhiên: CKD giai đoạn 3–5 (eGFR &lt;60) hoặc đang lọc thận → <b>bắt buộc hỏi bác sĩ thận</b> trước khi dùng. Saponin tích lũy chậm hơn khi thận suy, dễ tăng liều ngoài ý muốn.</div>
+</div>
 <div class="list" id="saponinList"></div>
 
 <div class="footer">
@@ -200,7 +205,7 @@ const DATA = [
     chuyenHoa:"Sản phẩm cuối của M-R2 qua vi khuẩn ruột. 24R hấp thu tốt hơn 24S ~14 lần.",
     dacDiem:"Aglycon của nhóm OCT. Cấu trúc vòng epoxy 5 hoặc 6 thành viên tại C-20/21. Không bền trong acid → bào chế cần bảo vệ.",
     hoatTinh:"Chống viêm mạnh nhất nhóm OCT, ức chế Th17, bảo vệ tim mạch, chống colitis",
-    tags:["timMach", "chongViem"],
+    tags:["than","timMach", "chongViem"],
   },
   {
     stt:2, ten:"Majonoside R2 (M-R2)", tenVi:"Majonosid R2", nhom:"OCT",
@@ -428,7 +433,7 @@ const DATA = [
     chuyenHoa:"→ Rh1 (mất Glc-C20) hoặc Rg2 (mất Rha-C6) → F1/Rh1 → PPT",
     dacDiem:"Tính thấm cao nhất trong saponin glycosyl hóa (Kim et al.). Có thể hấp thu trực tiếp 1 phần qua passive diffusion.",
     hoatTinh:"Thần kinh (Alzheimer, Parkinson), miễn dịch, chống oxy hóa, tăng hồng cầu, giảm đường huyết",
-    tags:["thanKinh", "oxyHoa", "miendich", "tienDuongHuyet"],
+    tags:["than","thanKinh", "oxyHoa", "miendich", "tienDuongHuyet"],
   },
   {
     stt:18, ten:"Ginsenoside Re (G-Re)", tenVi:"Ginsenoside Re", nhom:"PPT",
@@ -498,7 +503,7 @@ const DATA = [
     chuyenHoa:"→ Rg1 → PPT. Tan tốt nhưng thấm màng rất kém do phân tử lớn.",
     dacDiem:"Đặc trưng P. notoginseng, cũng có SNL. Tan tốt nhưng Papp thấp (<5×10⁻⁷ cm/s).",
     hoatTinh:"Bảo vệ tim mạch, chống huyết khối, chống đột quỵ",
-    tags:["timMach"],
+    tags:["than","timMach"],
   },
   {
     stt:23, ten:"Notoginsenoside R2", tenVi:"Notoginsenoside R2", nhom:"PPT",
@@ -684,7 +689,7 @@ const DATA = [
     chuyenHoa:"Trung gian cuối: F2 → CK → PPD. Được tạo ra trực tiếp từ vi khuẩn ruột.",
     dacDiem:"Sinh khả dụng ~35%. Ít bị P-gp nhận diện. Khuếch tán thụ động qua Caco-2 (Papp 8.65×10⁻⁷ cm/s).",
     hoatTinh:"Kháng ung thư (nhiều dòng tế bào), chống đái tháo đường, chống viêm khớp dạng thấp",
-    tags:["ungThu", "chongViem", "tienDuongHuyet"],
+    tags:["than","ungThu", "chongViem", "tienDuongHuyet"],
   },
   {
     stt:36, ten:"Ginsenoside Rh2 (G-Rh2) 20S", tenVi:"Ginsenoside Rh2", nhom:"PPD",
@@ -698,7 +703,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Rg3 → Rh2 → PPD.",
     dacDiem:"MW = CK nhưng sinh khả dụng <3% vì P-gp efflux cao. Verapamil tăng hấp thu >30%.",
     hoatTinh:"Kháng ung thư, đảo ngược kháng thuốc MDR, cải thiện insulin sensitivity",
-    tags:["ungThu", "tienDuongHuyet"],
+    tags:["than","ungThu", "tienDuongHuyet"],
   },
   {
     stt:37, ten:"Ginsenoside Rg3 (G-Rg3) 20S", tenVi:"Ginsenoside Rg3", nhom:"PPD",
@@ -712,7 +717,7 @@ const DATA = [
     chuyenHoa:"→ Rh2 → PPD. Tăng mạnh sau steaming (hồng sâm).",
     dacDiem:"Dùng điều trị ung thư ở TQ. Tmax 1–6h. P-gp blocker tăng AUC đáng kể.",
     hoatTinh:"Kháng ung thư, kháng huyết khối, bảo vệ tim, chống viêm",
-    tags:["ungThu", "timMach", "chongViem"],
+    tags:["than","ungThu", "timMach", "chongViem"],
   },
   {
     stt:38, ten:"Ginsenoside F2", tenVi:"Ginsenoside F2", nhom:"PPD",
@@ -740,7 +745,7 @@ const DATA = [
     chuyenHoa:"→ F2 → CK → PPD. Tmax 2–8h.",
     dacDiem:"3 gốc đường. Tăng 4,2× từ 2→5 năm tuổi. Một trong saponin định lượng chuẩn VG.",
     hoatTinh:"Thần kinh (bảo vệ tế bào), chống viêm, chống oxy hóa",
-    tags:["thanKinh", "chongViem", "oxyHoa"],
+    tags:["than","thanKinh", "chongViem", "oxyHoa"],
   },
   {
     stt:40, ten:"Ginsenoside Rb1 (G-Rb1)", tenVi:"Ginsenoside Rb1", nhom:"PPD",
@@ -754,7 +759,7 @@ const DATA = [
     chuyenHoa:"→ Rd → F2 → CK → PPD (4 bước vi khuẩn ruột). Tmax 2–8h.",
     dacDiem:"4 gốc đường, MW 1109 g/mol. Sinh khả dụng 0.78%. Con đường dài nhất 4 bước.",
     hoatTinh:"Chống ung thư, chống trầm cảm, giảm cân, kháng viêm khớp",
-    tags:["ungThu", "thanKinh", "chongViem"],
+    tags:["than","ungThu", "thanKinh", "chongViem"],
   },
   {
     stt:41, ten:"Ginsenoside Rb2 (G-Rb2)", tenVi:"Ginsenoside Rb2", nhom:"PPD",
@@ -782,7 +787,7 @@ const DATA = [
     chuyenHoa:"→ CK → PPD",
     dacDiem:"Nhiều trong lá sâm Ngọc Linh hơn rễ. 4 đường, sinh khả dụng 0.52%.",
     hoatTinh:"Bảo vệ gan, chống oxy hóa",
-    tags:["gan", "oxyHoa"],
+    tags:["than","gan", "oxyHoa"],
   },
   {
     stt:43, ten:"Ginsenoside Rc (G-Rc)", tenVi:"Ginsenoside Rc", nhom:"PPD",
@@ -810,7 +815,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Hình thành chủ yếu khi chế biến nhiệt (black ginseng > red ginseng).",
     dacDiem:"Saponin nhiệt-chuyển hóa. 1 đường + nối đôi mới. Không có trong sâm tươi nhiều.",
     hoatTinh:"Kháng ung thư phổi, kháng viêm",
-    tags:["ungThu", "chongViem"],
+    tags:["than","ungThu", "chongViem"],
   },
   {
     stt:45, ten:"Ginsenoside Rk1", tenVi:"Ginsenoside Rk1", nhom:"PPD",
@@ -824,7 +829,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Tmax nhanh (0.5–3h) sau steaming.",
     dacDiem:"Đồng phân vị trí nối đôi của Rg5. Cả hai tăng mạnh khi hấp/steaming sâm.",
     hoatTinh:"Kháng ung thư phổi (A549), kháng huyết khối",
-    tags:["ungThu", "timMach"],
+    tags:["than","ungThu", "timMach"],
   },
   {
     stt:46, ten:"Ginsenoside XVII (Gypenoside XVII)", tenVi:"Gypenoside XVII", nhom:"PPD",
@@ -1121,6 +1126,7 @@ const PHARM_META = {
   khangKhuan:     {label:"Kháng khuẩn",    color:"#6d28d9", bg:"#ede9fe"},
   da:             {label:"Làm đẹp da",     color:"#ec4899", bg:"#fce7f3"},
   stress:         {label:"Chống stress",   color:"#0369a1", bg:"#e0f2fe"},
+  than:           {label:"Bảo vệ thận",   color:"#0ea5e9", bg:"#e0f2fe"},
 };
 
 function setPharm(key) {
@@ -1149,6 +1155,9 @@ function setPharm(key) {
   }
   // Scroll to results
   document.getElementById('saponinList').scrollIntoView({behavior:'smooth', block:'start'});
+  var tn = document.getElementById('thanNote');
+  if (tn) tn.style.display = (key === 'than') ? 'block' : 'none';
+
   renderList();
 }
 
