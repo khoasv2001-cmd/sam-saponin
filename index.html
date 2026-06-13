@@ -39,6 +39,20 @@
   .sort-btn.active { background: #f0fdf4; border-color: #16a34a; color: #15803d; font-weight: 600; }
   .result-count { font-size: 11px; color: #94a3b8; margin-top: 6px; }
 
+
+  /* PHARMACOLOGY FILTER */
+  .pharm-section { background: #fff; padding: 10px 16px 12px; border-bottom: 1px solid #e2e8f0; }
+  .pharm-title { font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .pharm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .pharm-btn { border: 1.5px solid #e2e8f0; background: white; border-radius: 8px; padding: 7px 4px; font-size: 10px; font-weight: 600; cursor: pointer; text-align: center; color: #64748b; line-height: 1.3; transition: all 0.15s; }
+  .pharm-btn:active { opacity: 0.7; }
+  .pharm-btn.active { color: white; border-color: transparent; }
+  .pharm-btn .pharm-icon { font-size: 15px; display: block; margin-bottom: 2px; }
+  .pharm-clear { grid-column: 1/-1; background: #f8fafc; color: #64748b; border: 1.5px dashed #cbd5e1; border-radius: 8px; padding: 6px; font-size: 11px; font-weight: 600; cursor: pointer; text-align: center; }
+  .pharm-clear:active { opacity: 0.7; }
+  /* Badge on cards */
+  .pharm-badge { display: inline-flex; align-items: center; gap: 3px; border-radius: 10px; padding: 2px 7px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+
   /* LEGEND */
   .legend { padding: 8px 16px; background: #fafafa; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
   .legend-label { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 4px; }
@@ -134,6 +148,27 @@
   <div class="result-count" id="resultCount">57 saponin</div>
 </div>
 
+<div class="pharm-section" id="pharmSection">
+  <div class="pharm-title">
+    <span>💊</span> Lọc theo hoạt tính dược lý
+    <span id="pharmActiveLabel" style="margin-left:auto;font-size:10px;color:#2d6040;font-weight:700;display:none"></span>
+  </div>
+  <div class="pharm-grid">
+    <button class="pharm-btn" data-pharm="gan" style="--c:#16a34a;--bg:#dcfce7" onclick="setPharm('gan')"><span class="pharm-icon">🫀</span>Bảo vệ gan</button>
+    <button class="pharm-btn" data-pharm="ungThu" style="--c:#dc2626;--bg:#fee2e2" onclick="setPharm('ungThu')"><span class="pharm-icon">🔬</span>Kháng ung thư</button>
+    <button class="pharm-btn" data-pharm="thanKinh" style="--c:#7c3aed;--bg:#f3e8ff" onclick="setPharm('thanKinh')"><span class="pharm-icon">🧠</span>Thần kinh</button>
+    <button class="pharm-btn" data-pharm="timMach" style="--c:#e11d48;--bg:#ffe4e6" onclick="setPharm('timMach')"><span class="pharm-icon">❤️</span>Tim mạch</button>
+    <button class="pharm-btn" data-pharm="chongViem" style="--c:#d97706;--bg:#fef3c7" onclick="setPharm('chongViem')"><span class="pharm-icon">🛡️</span>Chống viêm</button>
+    <button class="pharm-btn" data-pharm="oxyHoa" style="--c:#0891b2;--bg:#e0f2fe" onclick="setPharm('oxyHoa')"><span class="pharm-icon">⚡</span>Chống oxy hóa</button>
+    <button class="pharm-btn" data-pharm="miendich" style="--c:#059669;--bg:#d1fae5" onclick="setPharm('miendich')"><span class="pharm-icon">💪</span>Miễn dịch</button>
+    <button class="pharm-btn" data-pharm="tienDuongHuyet" style="--c:#b45309;--bg:#fef9c3" onclick="setPharm('tienDuongHuyet')"><span class="pharm-icon">🩸</span>Đường huyết</button>
+    <button class="pharm-btn" data-pharm="khangKhuan" style="--c:#6d28d9;--bg:#ede9fe" onclick="setPharm('khangKhuan')"><span class="pharm-icon">🦠</span>Kháng khuẩn</button>
+    <button class="pharm-btn" data-pharm="da" style="--c:#ec4899;--bg:#fce7f3" onclick="setPharm('da')"><span class="pharm-icon">✨</span>Làm đẹp da</button>
+    <button class="pharm-btn" data-pharm="stress" style="--c:#0369a1;--bg:#e0f2fe" onclick="setPharm('stress')"><span class="pharm-icon">🧘</span>Chống stress</button>
+    <button class="pharm-clear" onclick="setPharm(null)">✕ Bỏ lọc hoạt tính</button>
+  </div>
+</div>
+
 <div class="legend">
   <span class="legend-label">Hấp thụ:</span>
   <span class="abs-chip tag-abs-cao">Cao &gt;30%</span>
@@ -165,6 +200,7 @@ const DATA = [
     chuyenHoa:"Sản phẩm cuối của M-R2 qua vi khuẩn ruột. 24R hấp thu tốt hơn 24S ~14 lần.",
     dacDiem:"Aglycon của nhóm OCT. Cấu trúc vòng epoxy 5 hoặc 6 thành viên tại C-20/21. Không bền trong acid → bào chế cần bảo vệ.",
     hoatTinh:"Chống viêm mạnh nhất nhóm OCT, ức chế Th17, bảo vệ tim mạch, chống colitis",
+    tags:["timMach", "chongViem"],
   },
   {
     stt:2, ten:"Majonoside R2 (M-R2)", tenVi:"Majonosid R2", nhom:"OCT",
@@ -178,6 +214,7 @@ const DATA = [
     chuyenHoa:"M-R2 → Pseudoginsenoside RT4 → Ocotillol (vi khuẩn ruột: Bacteroides, Bifidobacterium)",
     dacDiem:">5% trọng lượng khô rhizome. Saponin OCT nhiều nhất sâm Ngọc Linh. Không có ở P. ginseng hay P. notoginseng.",
     hoatTinh:"Chống stress, chống trầm cảm, lo âu, bảo vệ gan, tăng nhận thức, chống ung thư",
+    tags:["gan", "ungThu", "thanKinh", "stress"],
   },
   {
     stt:3, ten:"Majonoside R1 (M-R1)", tenVi:"Majonosid R1", nhom:"OCT",
@@ -191,6 +228,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol (vi khuẩn ruột)",
     dacDiem:"Saponin OCT phổ biến thứ 2. Đặc trưng sâm Ngọc Linh. Phân biệt var. vietnamensis vs fuscidiscus.",
     hoatTinh:"Chống oxy hóa, chống viêm, ức chế tế bào ung thư",
+    tags:["ungThu", "chongViem", "oxyHoa"],
   },
   {
     stt:4, ten:"Pseudoginsenoside RT4 (PRT4)", tenVi:"Pseudoginsenoside RT4", nhom:"OCT",
@@ -204,6 +242,7 @@ const DATA = [
     chuyenHoa:"Trung gian quan trọng: M-R2 → PRT4 → Ocotillol. Có hoạt tính riêng biệt.",
     dacDiem:"1 gốc đường. Hấp thu trực tiếp một phần. Là trung gian chuyển hóa của M-R2.",
     hoatTinh:"Ức chế Th17 cells, chống viêm ruột, hỗ trợ IBD, colitis",
+    tags:["chongViem"],
   },
   {
     stt:5, ten:"Vinaginsenoside R2 (V-R2)", tenVi:"Vinaginsenoside R2", nhom:"OCT",
@@ -217,6 +256,7 @@ const DATA = [
     chuyenHoa:"→ M-R2 (giải acetyl) → PRT4 → Ocotillol",
     dacDiem:"Dạng acetyl hóa của M-R2. Phát hiện trong rễ sâm Ngọc Linh. Ổn định hơn M-R2.",
     hoatTinh:"Chống viêm thần kinh, chống melanin hóa (B16-F10 cells)",
+    tags:["thanKinh", "chongViem", "da"],
   },
   {
     stt:6, ten:"Vinaginsenoside R11 (V-R11)", tenVi:"Vinaginsenoside R11", nhom:"OCT",
@@ -230,6 +270,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol (vi khuẩn ruột)",
     dacDiem:"Một trong 9 saponin chuẩn định lượng VG (HPLC). Phổ biến trong rhizome.",
     hoatTinh:"Chống melanin hóa, chống oxy hóa",
+    tags:["oxyHoa", "da"],
   },
   {
     stt:7, ten:"Pseudoginsenoside F11", tenVi:"24(S)-Pseudoginsenoside F11", nhom:"OCT",
@@ -243,6 +284,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol. Cũng có trong P. quinquefolius.",
     dacDiem:"Cấu hình 24(S). Có trong nhiều loài Panax. Hấp thu tương đối tốt do ít đường.",
     hoatTinh:"Kháng khuẩn, chống viêm, bảo vệ hệ thần kinh",
+    tags:["thanKinh", "chongViem", "khangKhuan"],
   },
   {
     stt:8, ten:"Vinaginsenoside R1 (V-R1)", tenVi:"Vinaginsenoside R1", nhom:"OCT",
@@ -256,6 +298,7 @@ const DATA = [
     chuyenHoa:"→ Pseudoginsenoside F11 → Ocotillol",
     dacDiem:"Dạng acetyl của F11. Nhiều trong cấy mô (hairy root). Đặc trưng SNL.",
     hoatTinh:"Kháng u, chống viêm",
+    tags:["ungThu", "chongViem"],
   },
   {
     stt:9, ten:"Majonoside F1", tenVi:"Majoroside F1", nhom:"OCT",
@@ -269,6 +312,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol",
     dacDiem:"Saponin OCT hiếm, phát hiện song song với vina-ginsenoside R9 trong điều tra thứ 2.",
     hoatTinh:"Chưa nghiên cứu đầy đủ",
+    tags:[],
   },
   {
     stt:10, ten:"Vinaginsenoside R5 (V-R5)", tenVi:"Vinaginsenoside R5", nhom:"OCT",
@@ -282,6 +326,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol (chậm hơn do liên kết α ít bị enzyme cắt)",
     dacDiem:"Saponin mới trong điều tra thứ 2. Liên kết α-glucosyl làm chậm chuyển hóa ruột.",
     hoatTinh:"Chống oxy hóa",
+    tags:["oxyHoa"],
   },
   {
     stt:11, ten:"Vinaginsenoside R6 (V-R6)", tenVi:"Vinaginsenoside R6", nhom:"OCT",
@@ -295,6 +340,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol",
     dacDiem:"Đồng phân V-R5. Cả hai đều có liên kết α-glucosyl hiếm gặp.",
     hoatTinh:"Chống oxy hóa",
+    tags:["oxyHoa"],
   },
   {
     stt:12, ten:"Vinaginsenoside R7 (V-R7)", tenVi:"Vinaginsenoside R7", nhom:"OCT",
@@ -308,6 +354,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol",
     dacDiem:"Ghi nhận hoạt tính chống viêm thần kinh rõ rệt trong nghiên cứu Xia et al. 2022.",
     hoatTinh:"Chống viêm thần kinh (neuroinflammation)",
+    tags:["thanKinh", "chongViem"],
   },
   {
     stt:13, ten:"Pseudoginsenoside RC1", tenVi:"Pseudoginsenoside RC1", nhom:"OCT",
@@ -321,6 +368,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol",
     dacDiem:"Phát hiện qua metabolomics không nhắm mục tiêu. Phân biệt var. vietnamensis và fuscidiscus.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:14, ten:"Vinaginsenoside R13 (V-R13)", tenVi:"Vinaginsenoside R13", nhom:"OCT",
@@ -334,6 +382,7 @@ const DATA = [
     chuyenHoa:"→ M-R2 → PRT4 → Ocotillol (cần 3 bước)",
     dacDiem:"3 gốc đường. Phân biệt var. vietnamensis vs fuscidiscus qua metabolomics.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:15, ten:"Vinaginsenoside R14 (V-R14)", tenVi:"Vinaginsenoside R14", nhom:"OCT",
@@ -347,6 +396,7 @@ const DATA = [
     chuyenHoa:"→ Ocotillol (3 bước)",
     dacDiem:"Phân biệt 2 varietat của sâm Ngọc Linh.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
 
   // ══════════════════════════════════
@@ -364,6 +414,7 @@ const DATA = [
     chuyenHoa:"Sản phẩm cuối của Rg1, Re. Hấp thu qua bạch huyết mạc treo ruột → ester hóa acid béo → tích gan.",
     dacDiem:"Thấp hơn PPD aglycon do kém bền trong dịch vị. Có thêm –OH tại C-6 so với PPD.",
     hoatTinh:"Giãn mạch (NO-dependent), bảo vệ nội mô, chống viêm, tim mạch",
+    tags:["timMach", "chongViem"],
   },
   {
     stt:17, ten:"Ginsenoside Rg1 (G-Rg1)", tenVi:"Ginsenoside Rg1", nhom:"PPT",
@@ -377,6 +428,7 @@ const DATA = [
     chuyenHoa:"→ Rh1 (mất Glc-C20) hoặc Rg2 (mất Rha-C6) → F1/Rh1 → PPT",
     dacDiem:"Tính thấm cao nhất trong saponin glycosyl hóa (Kim et al.). Có thể hấp thu trực tiếp 1 phần qua passive diffusion.",
     hoatTinh:"Thần kinh (Alzheimer, Parkinson), miễn dịch, chống oxy hóa, tăng hồng cầu, giảm đường huyết",
+    tags:["thanKinh", "oxyHoa", "miendich", "tienDuongHuyet"],
   },
   {
     stt:18, ten:"Ginsenoside Re (G-Re)", tenVi:"Ginsenoside Re", nhom:"PPT",
@@ -390,6 +442,7 @@ const DATA = [
     chuyenHoa:"→ Rg1 (mất Rha) hoặc Rg2 (mất Glc-C20) → PPT",
     dacDiem:"3 gốc đường. Tmax 2–8h (chậm hơn Rg1). Nhiều trong lá và rễ non.",
     hoatTinh:"Chống đái tháo đường, tim mạch, kháng virus",
+    tags:["timMach", "tienDuongHuyet", "khangKhuan"],
   },
   {
     stt:19, ten:"Ginsenoside Rh1 (G-Rh1)", tenVi:"Ginsenoside Rh1", nhom:"PPT",
@@ -403,6 +456,7 @@ const DATA = [
     chuyenHoa:"Trung gian: Rg1 → Rh1 → PPT. Cũng tạo trực tiếp từ Re qua mất Rha.",
     dacDiem:"1 gốc đường → hấp thu nhanh. Dạng saponin minor, nhiều hơn sau chế biến.",
     hoatTinh:"Chống ung thư gan (HepG2), chống viêm, bảo vệ gan",
+    tags:["gan", "ungThu", "chongViem"],
   },
   {
     stt:20, ten:"20(R)-Ginsenoside Rh1", tenVi:"20(R)-Ginsenoside Rh1", nhom:"PPT",
@@ -416,6 +470,7 @@ const DATA = [
     chuyenHoa:"→ PPT (cấu hình R). Đồng phân lập thể quan trọng.",
     dacDiem:"Phát hiện trong sâm Ngọc Linh cùng dạng 20(S). Hoạt tính khác nhau giữa 2 đồng phân.",
     hoatTinh:"Chống viêm, giải độc, khác Rh1-20S ở một số mục tiêu",
+    tags:["chongViem"],
   },
   {
     stt:21, ten:"Ginsenoside Rg2 (G-Rg2)", tenVi:"Ginsenoside Rg2", nhom:"PPT",
@@ -429,6 +484,7 @@ const DATA = [
     chuyenHoa:"→ Rh1 → PPT. Từ Re qua mất Glc-C20.",
     dacDiem:"Không có đường tại C-20 (khác Rg1). Tmax 1–6h.",
     hoatTinh:"Bảo vệ thần kinh, chống oxy hóa, cải thiện trí nhớ",
+    tags:["thanKinh", "oxyHoa"],
   },
   {
     stt:22, ten:"Notoginsenoside R1 (N-R1)", tenVi:"Notoginsenoside R1", nhom:"PPT",
@@ -442,6 +498,7 @@ const DATA = [
     chuyenHoa:"→ Rg1 → PPT. Tan tốt nhưng thấm màng rất kém do phân tử lớn.",
     dacDiem:"Đặc trưng P. notoginseng, cũng có SNL. Tan tốt nhưng Papp thấp (<5×10⁻⁷ cm/s).",
     hoatTinh:"Bảo vệ tim mạch, chống huyết khối, chống đột quỵ",
+    tags:["timMach"],
   },
   {
     stt:23, ten:"Notoginsenoside R2", tenVi:"Notoginsenoside R2", nhom:"PPT",
@@ -455,6 +512,7 @@ const DATA = [
     chuyenHoa:"→ PPT",
     dacDiem:"Phát hiện qua UPLC-MS metabolomics SNL.",
     hoatTinh:"Chống viêm, tim mạch",
+    tags:["timMach", "chongViem"],
   },
   {
     stt:24, ten:"Notoginsenoside R6", tenVi:"Notoginsenoside R6", nhom:"PPT",
@@ -468,6 +526,7 @@ const DATA = [
     chuyenHoa:"→ PPT",
     dacDiem:"Phát hiện qua điều tra saponin lần 2 (vina-ginsenosides R3–R9).",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:25, ten:"Notoginsenoside Fa", tenVi:"Notoginsenoside Fa", nhom:"PPT",
@@ -481,6 +540,7 @@ const DATA = [
     chuyenHoa:"→ Re → Rg1 → PPT (cần 4 bước deglycosyl)",
     dacDiem:"4 gốc đường = khó hấp thu nhất nhóm PPT. Nhiều trong SNL hơn P. ginseng.",
     hoatTinh:"Chống ung thư",
+    tags:["ungThu"],
   },
   {
     stt:26, ten:"Quinquenoside R1", tenVi:"Quinquenoside R1", nhom:"PPT",
@@ -494,6 +554,7 @@ const DATA = [
     chuyenHoa:"→ Rg1 → PPT",
     dacDiem:"Đặc trưng sâm Mỹ, cũng có trong sâm Ngọc Linh (hàm lượng nhỏ).",
     hoatTinh:"Chống oxy hóa, miễn dịch",
+    tags:["oxyHoa", "miendich"],
   },
   {
     stt:27, ten:"Pseudoginsenoside RS1", tenVi:"Pseudoginsenoside RS1", nhom:"PPT",
@@ -507,6 +568,7 @@ const DATA = [
     chuyenHoa:"→ Re (giải acetyl) → Rg1 → PPT",
     dacDiem:"= Monoacetyl Re. Nhóm acetyl làm chậm deglycosyl.",
     hoatTinh:"Ức chế acetylcholinesterase (IC₅₀ 79.58 µM — hỗ trợ Alzheimer)",
+    tags:["thanKinh"],
   },
   {
     stt:28, ten:"20-Gluco-ginsenoside Rf", tenVi:"20-Gluco-ginsenoside Rf", nhom:"PPT",
@@ -520,6 +582,7 @@ const DATA = [
     chuyenHoa:"→ Rf (mất Glc-C20) → Rh1 → PPT",
     dacDiem:"Lần đầu tiên phân lập từ sâm Ngọc Linh (Nguyen 1999).",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:29, ten:"Ginsenoside Rh4", tenVi:"Ginsenoside Rh4", nhom:"PPT",
@@ -533,6 +596,7 @@ const DATA = [
     chuyenHoa:"→ PPT. Tăng mạnh sau steaming (hồng sâm). Tmax 0.5–3h.",
     dacDiem:"Saponin PPT hiếm, 1 đường, hình thành chủ yếu qua nhiệt (steaming).",
     hoatTinh:"Chống ung thư đại tràng, gây apoptosis",
+    tags:["ungThu"],
   },
   {
     stt:30, ten:"Ginsenoside Rh5", tenVi:"Ginsenoside Rh5", nhom:"PPT",
@@ -546,6 +610,7 @@ const DATA = [
     chuyenHoa:"→ PPT",
     dacDiem:"Mới phát hiện lần đầu trong SNL (Tran 2001). 1 gốc đường → hấp thu khá.",
     hoatTinh:"Bảo vệ gan (D-GalN/TNF-α model)",
+    tags:["gan"],
   },
   {
     stt:31, ten:"Hypenoside XVII", tenVi:"Hypenoside XVII", nhom:"PPT",
@@ -559,6 +624,7 @@ const DATA = [
     chuyenHoa:"→ PPT",
     dacDiem:"Từ P. japonicus (sâm Nhật), cũng có trong SNL với lượng nhỏ.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:32, ten:"Hypenoside IX", tenVi:"Hypenoside IX", nhom:"PPT",
@@ -572,6 +638,7 @@ const DATA = [
     chuyenHoa:"→ PPT",
     dacDiem:"Đồng phân Hypenoside XVII trong chuỗi saponin từ P. japonicus.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:33, ten:"Protopanaxatriol oxide sapogenin II", tenVi:"PPT oxide sapogenin II", nhom:"PPT",
@@ -585,6 +652,7 @@ const DATA = [
     chuyenHoa:"Hấp thu trực tiếp, không cần chuyển hóa vi sinh",
     dacDiem:"Sapogenin hiếm phát hiện trong SNL (Tran 2001). Phân tử nhỏ, hấp thu tốt.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
 
   // ══════════════════════════════════
@@ -602,6 +670,7 @@ const DATA = [
     chuyenHoa:"Sản phẩm cuối của toàn bộ chuỗi PPD (Rb1→Rd→F2→CK→PPD).",
     dacDiem:"Sinh khả dụng 36.8% ± 12.4%, cao hơn Rg3 và Rh2 ít nhất 10 lần. MW thấp (460 g/mol).",
     hoatTinh:"Kháng ung thư mạnh nhất, chống viêm, bảo vệ thần kinh",
+    tags:["ungThu", "thanKinh", "chongViem"],
   },
   {
     stt:35, ten:"Compound K (CK / 20-O-β-Glc-PPD)", tenVi:"Compound K (Ginsenoside CK)", nhom:"PPD",
@@ -615,6 +684,7 @@ const DATA = [
     chuyenHoa:"Trung gian cuối: F2 → CK → PPD. Được tạo ra trực tiếp từ vi khuẩn ruột.",
     dacDiem:"Sinh khả dụng ~35%. Ít bị P-gp nhận diện. Khuếch tán thụ động qua Caco-2 (Papp 8.65×10⁻⁷ cm/s).",
     hoatTinh:"Kháng ung thư (nhiều dòng tế bào), chống đái tháo đường, chống viêm khớp dạng thấp",
+    tags:["ungThu", "chongViem", "tienDuongHuyet"],
   },
   {
     stt:36, ten:"Ginsenoside Rh2 (G-Rh2) 20S", tenVi:"Ginsenoside Rh2", nhom:"PPD",
@@ -628,6 +698,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Rg3 → Rh2 → PPD.",
     dacDiem:"MW = CK nhưng sinh khả dụng <3% vì P-gp efflux cao. Verapamil tăng hấp thu >30%.",
     hoatTinh:"Kháng ung thư, đảo ngược kháng thuốc MDR, cải thiện insulin sensitivity",
+    tags:["ungThu", "tienDuongHuyet"],
   },
   {
     stt:37, ten:"Ginsenoside Rg3 (G-Rg3) 20S", tenVi:"Ginsenoside Rg3", nhom:"PPD",
@@ -641,6 +712,7 @@ const DATA = [
     chuyenHoa:"→ Rh2 → PPD. Tăng mạnh sau steaming (hồng sâm).",
     dacDiem:"Dùng điều trị ung thư ở TQ. Tmax 1–6h. P-gp blocker tăng AUC đáng kể.",
     hoatTinh:"Kháng ung thư, kháng huyết khối, bảo vệ tim, chống viêm",
+    tags:["ungThu", "timMach", "chongViem"],
   },
   {
     stt:38, ten:"Ginsenoside F2", tenVi:"Ginsenoside F2", nhom:"PPD",
@@ -654,6 +726,7 @@ const DATA = [
     chuyenHoa:"Trung gian: Rd → F2 → CK → PPD",
     dacDiem:"Saponin trung gian quan trọng. Ít hơn CK trong máu sau uống sâm.",
     hoatTinh:"Kháng ung thư vú (MCF-7), đại tràng",
+    tags:["ungThu"],
   },
   {
     stt:39, ten:"Ginsenoside Rd (G-Rd)", tenVi:"Ginsenoside Rd", nhom:"PPD",
@@ -667,6 +740,7 @@ const DATA = [
     chuyenHoa:"→ F2 → CK → PPD. Tmax 2–8h.",
     dacDiem:"3 gốc đường. Tăng 4,2× từ 2→5 năm tuổi. Một trong saponin định lượng chuẩn VG.",
     hoatTinh:"Thần kinh (bảo vệ tế bào), chống viêm, chống oxy hóa",
+    tags:["thanKinh", "chongViem", "oxyHoa"],
   },
   {
     stt:40, ten:"Ginsenoside Rb1 (G-Rb1)", tenVi:"Ginsenoside Rb1", nhom:"PPD",
@@ -680,6 +754,7 @@ const DATA = [
     chuyenHoa:"→ Rd → F2 → CK → PPD (4 bước vi khuẩn ruột). Tmax 2–8h.",
     dacDiem:"4 gốc đường, MW 1109 g/mol. Sinh khả dụng 0.78%. Con đường dài nhất 4 bước.",
     hoatTinh:"Chống ung thư, chống trầm cảm, giảm cân, kháng viêm khớp",
+    tags:["ungThu", "thanKinh", "chongViem"],
   },
   {
     stt:41, ten:"Ginsenoside Rb2 (G-Rb2)", tenVi:"Ginsenoside Rb2", nhom:"PPD",
@@ -693,6 +768,7 @@ const DATA = [
     chuyenHoa:"→ Rc → CK → PPD",
     dacDiem:"Sinh khả dụng chỉ 0.08% — thấp nhất nhóm PPD. Arabinofuranose kém bị enzyme cắt.",
     hoatTinh:"Chống oxy hóa, tim mạch",
+    tags:["timMach", "oxyHoa"],
   },
   {
     stt:42, ten:"Ginsenoside Rb3 (G-Rb3)", tenVi:"Ginsenoside Rb3", nhom:"PPD",
@@ -706,6 +782,7 @@ const DATA = [
     chuyenHoa:"→ CK → PPD",
     dacDiem:"Nhiều trong lá sâm Ngọc Linh hơn rễ. 4 đường, sinh khả dụng 0.52%.",
     hoatTinh:"Bảo vệ gan, chống oxy hóa",
+    tags:["gan", "oxyHoa"],
   },
   {
     stt:43, ten:"Ginsenoside Rc (G-Rc)", tenVi:"Ginsenoside Rc", nhom:"PPD",
@@ -719,6 +796,7 @@ const DATA = [
     chuyenHoa:"Rc → Mb → Mc → CK → PPD (qua Bacteroides HJ-15). Hoặc: Rc → Rd → F2 → CK → PPD.",
     dacDiem:"Con đường chuyển hóa phức tạp nhất. 2 con đường song song. Arabinopyranose kém cắt.",
     hoatTinh:"Miễn dịch, chống mệt mỏi",
+    tags:["miendich", "stress"],
   },
   {
     stt:44, ten:"Ginsenoside Rg5", tenVi:"Ginsenoside Rg5", nhom:"PPD",
@@ -732,6 +810,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Hình thành chủ yếu khi chế biến nhiệt (black ginseng > red ginseng).",
     dacDiem:"Saponin nhiệt-chuyển hóa. 1 đường + nối đôi mới. Không có trong sâm tươi nhiều.",
     hoatTinh:"Kháng ung thư phổi, kháng viêm",
+    tags:["ungThu", "chongViem"],
   },
   {
     stt:45, ten:"Ginsenoside Rk1", tenVi:"Ginsenoside Rk1", nhom:"PPD",
@@ -745,6 +824,7 @@ const DATA = [
     chuyenHoa:"→ PPD. Tmax nhanh (0.5–3h) sau steaming.",
     dacDiem:"Đồng phân vị trí nối đôi của Rg5. Cả hai tăng mạnh khi hấp/steaming sâm.",
     hoatTinh:"Kháng ung thư phổi (A549), kháng huyết khối",
+    tags:["ungThu", "timMach"],
   },
   {
     stt:46, ten:"Ginsenoside XVII (Gypenoside XVII)", tenVi:"Gypenoside XVII", nhom:"PPD",
@@ -758,6 +838,7 @@ const DATA = [
     chuyenHoa:"→ Rb2 → CK → PPD",
     dacDiem:"Chia sẻ cấu trúc với Gynostemma. Hàm lượng nhỏ trong SNL.",
     hoatTinh:"Hạ đường huyết, tim mạch",
+    tags:["timMach", "tienDuongHuyet"],
   },
   {
     stt:47, ten:"Malonyl-Ginsenoside Rb1", tenVi:"Malonyl-Ginsenoside Rb1", nhom:"PPD",
@@ -771,6 +852,7 @@ const DATA = [
     chuyenHoa:"→ Rb1 (mất malonyl) → CK → PPD",
     dacDiem:"Dạng malonyl hóa của Rb1. Nhiều trong cấy mô tế bào SNL (2024).",
     hoatTinh:"Tiền chất Rb1",
+    tags:[],
   },
   {
     stt:48, ten:"Vinaginsenoside R3 (V-R3)", tenVi:"Vinaginsenoside R3", nhom:"PPD",
@@ -784,6 +866,7 @@ const DATA = [
     chuyenHoa:"→ Dammarenediol II → PPD",
     dacDiem:"Saponin PPD mới, glycoside đầu tiên của dammarenediol II được phân lập. Đặc trưng SNL.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:49, ten:"Vinaginsenoside R4 (V-R4)", tenVi:"Vinaginsenoside R4", nhom:"PPD",
@@ -797,6 +880,7 @@ const DATA = [
     chuyenHoa:"→ PPD",
     dacDiem:"Saponin PPD mới từ điều tra thứ 2 sâm Ngọc Linh.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:50, ten:"Vinaginsenoside R8 (V-R8)", tenVi:"Vinaginsenoside R8", nhom:"PPD",
@@ -810,6 +894,7 @@ const DATA = [
     chuyenHoa:"→ PPD",
     dacDiem:"Saponin PPD mới điều tra thứ 2. Bảo vệ gan.",
     hoatTinh:"Bảo vệ gan",
+    tags:["gan"],
   },
   {
     stt:51, ten:"Vinaginsenoside R9 (V-R9)", tenVi:"Vinaginsenoside R9", nhom:"PPD",
@@ -823,6 +908,7 @@ const DATA = [
     chuyenHoa:"→ PPD",
     dacDiem:"Phân lập cùng đợt với majoroside F1 trong điều tra hóa học lần 2.",
     hoatTinh:"Đang nghiên cứu",
+    tags:[],
   },
   {
     stt:52, ten:"Vinaginsenoside R10 (V-R10)", tenVi:"Vinaginsenoside R10", nhom:"PPD",
@@ -836,6 +922,7 @@ const DATA = [
     chuyenHoa:"→ PPD",
     dacDiem:"Phân lập cùng ginsenoside Rh5 (Tran et al. 2001).",
     hoatTinh:"Bảo vệ gan",
+    tags:["gan"],
   },
   {
     stt:53, ten:"Vinaginsenoside R25 (V-R25)", tenVi:"Vinaginsenoside R25", nhom:"PPD",
@@ -849,6 +936,7 @@ const DATA = [
     chuyenHoa:"→ PPD",
     dacDiem:"Mới phát hiện cùng Rh5. 1 đường → hấp thu khá. Đặc trưng SNL.",
     hoatTinh:"Bảo vệ gan",
+    tags:["gan"],
   },
 
   // ══════════════════════════════════
@@ -866,6 +954,7 @@ const DATA = [
     chuyenHoa:"→ Oleanolic acid aglycon (cơ chế độc lập, khác PPD/PPT)",
     dacDiem:"Khung oleanolic acid (pentacyclic) hoàn toàn khác dammarane. Cơ chế hấp thu khác.",
     hoatTinh:"Chống viêm, bảo vệ gan, hạ lipid máu",
+    tags:["gan", "timMach", "chongViem"],
   },
   {
     stt:55, ten:"Hemsloside Ma3", tenVi:"Hemsloside Ma3", nhom:"OA",
@@ -879,6 +968,7 @@ const DATA = [
     chuyenHoa:"→ Oleanolic acid",
     dacDiem:"Ban đầu phát hiện ở Hemsleya macrosperma (họ Bầu). Phân lập lần đầu trong SNL (Nguyen 1994).",
     hoatTinh:"Chống ung thư, kháng khuẩn",
+    tags:["ungThu", "khangKhuan"],
   },
   {
     stt:56, ten:"Chikusetsusaponin IV", tenVi:"Chikusetsusaponin IV", nhom:"OA",
@@ -892,6 +982,7 @@ const DATA = [
     chuyenHoa:"→ Oleanolic acid",
     dacDiem:"Phát hiện lần đầu trong cấy mô SNL (2024). Không có trong nghiên cứu cũ.",
     hoatTinh:"Kháng khuẩn, chống viêm",
+    tags:["chongViem", "khangKhuan"],
   },
   {
     stt:57, ten:"Notoginsenoside Fc (N-Fc)", tenVi:"Notoginsenoside Fc", nhom:"OA",
@@ -905,6 +996,7 @@ const DATA = [
     chuyenHoa:"→ Oleanolic acid",
     dacDiem:"Nhiều trong lá sâm Ngọc Linh. Phân biệt với OA saponin của P. notoginseng.",
     hoatTinh:"Chống oxy hóa",
+    tags:["oxyHoa"],
   },
 ];
 
@@ -934,7 +1026,8 @@ function renderList() {
     const matchGroup = currentFilter==="ALL" || s.nhom===currentFilter;
     const matchQ = !q || s.ten.toLowerCase().includes(q) || s.hoatTinh.toLowerCase().includes(q)
       || s.dacDiem.toLowerCase().includes(q) || (s.formula||"").toLowerCase().includes(q);
-    return matchGroup && matchQ;
+    const matchPharm = !currentPharm || (s.tags && s.tags.includes(currentPharm));
+    return matchGroup && matchQ && matchPharm;
   });
   if (currentSort==="absorb") data.sort((a,b)=>b.absScore-a.absScore);
   else if (currentSort==="sugar") data.sort((a,b)=>a.soGocDuong-b.soGocDuong);
@@ -962,6 +1055,7 @@ function renderList() {
             <span class="tag" style="background:${nc.bg};color:${nc.color};border:1px solid ${nc.border}">${s.nhom}</span>
             <span class="tag" style="background:${ac.bg};color:${ac.color}">${s.absText.split(' ')[0]}</span>
             ${s.unique?'<span class="tag" style="background:#fef08a;color:#713f12">★ Đặc trưng SNL</span>':''}
+            ${currentPharm && s.tags && s.tags.includes(currentPharm) ? `<span class="pharm-badge" style="background:${PHARM_META[currentPharm].bg};color:${PHARM_META[currentPharm].color}">💊 ${PHARM_META[currentPharm].label}</span>` : ''}
             <span class="tag" style="background:#f1f5f9;color:#475569">${s.soGocDuong===0?'Aglycon':s.soGocDuong+' đường'}</span>
           </div>
         </div>
@@ -1009,6 +1103,53 @@ function toggleCard(stt) {
   card.classList.toggle("open");
   openCard = card.classList.contains("open") ? card : null;
   if (openCard) setTimeout(()=>openCard.scrollIntoView({behavior:"smooth",block:"nearest"}),100);
+}
+
+
+// ── PHARMACOLOGY FILTER ──────────────────────────────────────
+let currentPharm = null;
+
+const PHARM_META = {
+  gan:            {label:"Bảo vệ gan",     color:"#16a34a", bg:"#dcfce7"},
+  ungThu:         {label:"Kháng ung thư",  color:"#dc2626", bg:"#fee2e2"},
+  thanKinh:       {label:"Thần kinh",      color:"#7c3aed", bg:"#f3e8ff"},
+  timMach:        {label:"Tim mạch",       color:"#e11d48", bg:"#ffe4e6"},
+  chongViem:      {label:"Chống viêm",     color:"#d97706", bg:"#fef3c7"},
+  oxyHoa:         {label:"Chống oxy hóa",  color:"#0891b2", bg:"#e0f2fe"},
+  miendich:       {label:"Miễn dịch",      color:"#059669", bg:"#d1fae5"},
+  tienDuongHuyet: {label:"Đường huyết",    color:"#b45309", bg:"#fef9c3"},
+  khangKhuan:     {label:"Kháng khuẩn",    color:"#6d28d9", bg:"#ede9fe"},
+  da:             {label:"Làm đẹp da",     color:"#ec4899", bg:"#fce7f3"},
+  stress:         {label:"Chống stress",   color:"#0369a1", bg:"#e0f2fe"},
+};
+
+function setPharm(key) {
+  currentPharm = key;
+  // Update button states
+  document.querySelectorAll('.pharm-btn').forEach(btn => {
+    const k = btn.dataset.pharm;
+    if (k === key) {
+      const m = PHARM_META[k];
+      btn.classList.add('active');
+      btn.style.background = m.color;
+      btn.style.borderColor = m.color;
+    } else {
+      btn.classList.remove('active');
+      btn.style.background = '';
+      btn.style.borderColor = '';
+    }
+  });
+  // Update label
+  const lbl = document.getElementById('pharmActiveLabel');
+  if (key && PHARM_META[key]) {
+    lbl.textContent = '▶ ' + PHARM_META[key].label;
+    lbl.style.display = 'inline';
+  } else {
+    lbl.style.display = 'none';
+  }
+  // Scroll to results
+  document.getElementById('saponinList').scrollIntoView({behavior:'smooth', block:'start'});
+  renderList();
 }
 
 // FILTER BUTTONS
