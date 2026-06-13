@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+  <!-- PWA META -->
+  <meta name="theme-color" content="#1a3a2a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sâm Saponin">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Sâm Saponin">
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAGm0lEQVR4nO3TR3bzRhCF0X8RHnmABXiIZXgJzjnnnMPK7XOgQ0gUg0Syu6safQdvDnTd78XLr77yn9moexH9AWaRE4ANPQHY0DsI4KV5MtvsBGBDTwA29ARgQ08ANvQEUHHTW/P+3j6zd07s3TN7737R/9rrBFBo05vz3R6jb4B/b+/fL/pNepgArtwK/uES4d/bB3eLfrOME8AzN70x3+0Y/A7wH1v0m2aYAJ6DfoP4pw/3F/3WAki0A/gbx7/uo/FCEMA59IPhf7zomwigBfzXz8AfGP+6j7cdwrABLPDhfxL/w0XfTAAl4cN/Ef51n2wrhGEC2IMP/9X4Hy76pgK4Bj78RfCv+7TvEDYbwFH48BfH/3DRNxcA/GH4e41gUwFMr52AD38T/Ms+u1u0heECgD8P/p4i2EQA8OfD30sEXQewwIc/Lf7p8/tFW9lcAPD3gz9zBF0GAH9/+LNG0FUAK3z4u8Q/fXG/aEvdBQD/dvBniqCLAODfHv5lX8ZHkD4A+LeLfzcBwD8s/ugI0gYA/zj4l30VE0HKAOAfD/9uwwcA/7j4IyJIFQD88LeOIE0A8M/w7/b13YYJAP4Z/kf4W0WQKwD44R8tAPhn+E/gX/ZN3QhCA4B/hv8J/LttLgD4Z/ifib9mBLEBwA//M/FvKgD4Z/gvxL/s2/IRNA8A/hn+K/Hv1m0A8M/w34i/dARtA4Af/gL4uwwA/hOD/2L803d36yYA+E8M/qvxl4ogLgD44b8RfxcBwH9k8BfBv+z72yJoHwD88BfEnzoA+Gf4K+O/NYJ2AcAPfyX8KQOAf4a/Ef5bIqgfAPzwN8A//ZAoAPhn+Bvj3y1PAPDD3xh/igDgn+EPwn9NBOUDgB/+QPzTj4EBwH9m8DfBv1uuAOCHvyH+XAHAD39j/CEBwH9k8IfgvySCegHAD38g/umnhgHAP8OfDP9u7QOAH/4k+NsHAD/8ifA3CQD+Gf6k+Jf9fD6CMgHAD39S/PUDgB/+xPhjAoAf/iT4qwYA/5HBnwr/UxGUDQB++BPin35pEQD88CfFXz8A+OFPjL9KAPDP8HeC/1wEtwUAP/yd4C8fAPzwd4S/TQDww58U//Rr7QDghz8x/qIBwD/D3xn+UxHcHgD88HeCv3wA8MPfEf6yAcAPf2f4p99KBQA//B3irx8A/PAnxl83APjhT46/XgDww98B/joBwA9/J/jLBwA//B3hLxsA/PB3hn/6vVQA8MPfIf66AcAPf3L89QKAH/4O8NcJAH74O8FfPgD44e8If9kA4Ie/M/zTH6UCgB/+DvHXDwB++BPjrxsA/PAnx18vAPjh7wB/nQDgh78T/OUDgB/+jvBPf5YMAH74O8NfLgD44e8Qf90A4Ic/Of56AcAPfwf4iwWwFwH88HeK//YA4Ie/E/zlA4Af/o7wtwkAfviT4p/+qh0A/PAnxl88gL0I4Ie/Q/xlAoAf/uT46wUAP/wd4G8fAPzwJ8JfLYCjEcAPfyf4ywcAP/zJ8LcLAH74E+Kf/m4RAPzwJ8VfPYAlAvjh7xB/vQDghz8B/pgA4Ic/Cf5mAawRwA9/R/jLBgA//InwNw/gZATww58Uf/0A4Ic/AH+OAOCHPwh/WABrBPDD3wH+OgHAD38g/umf4ACORgA//AnxtwkAfvgb4U8TwBoB/PAnxl83APjhb4g/XQBHI4Af/kT42wYAP/yV8KcNYI0AfvgT4m8TAPzwV8SfPoCTEcAPfzD+uADgh78A/m4C2IsAfviT4G8awBIB/PAnwp8jAPjhvxD/9G+nARxEAD/8gfhDAlgjgB/+YPxhASwRwA9/MP58AcAP/wn8mwvgIAL44W+MPzyANQL44Q/AnyKAJQL44Q/AnzcA+OEfKYC9COCHvxH+VAEsEcAPf0P86QI4GgH88I8UwF4E8MM/YgBLBPDDP3IAJyOAH/5RAjiIAH74RwtgjQB++EcNYIkAfvhHDuAgAvjhHy2ANQT4u8UfbWcTAZyMAH74RwngIAL44R8tgDUE+NPij7YxRABHI4Af/pEC2IsAfvhHDGANAf4w/NG3F8CxCOCHf7QA1hDgr44/+sYCuCYE+G/GH31TAVwbAvw34Y++oQBKhAD/xfijbyaAWiHAfxZ/9I0E0CIE+A8WfRMBRMYwKP7otxdAoo2EP/qtBZB8W8Qf/aYZJoAr1yP+6DfLOAEUWkb80W/SwwRQcS3xR/9rrxOADT0B2NATgA09AdjQezIAs5EmABt6ArChJwAbev8DNWDfUOqEDEMAAAAASUVORK5CYII=">
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22S%C3%A2m%20Ng%E1%BB%8Dc%20Linh%20Saponin%22%2C%22short_name%22%3A%22S%C3%A2m%20Saponin%22%2C%22description%22%3A%22B%E1%BA%A3ng%20ph%C3%A2n%20lo%E1%BA%A1i%2057%20saponin%20s%C3%A2m%20Ng%E1%BB%8Dc%20Linh%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%231a3a2a%22%2C%22theme_color%22%3A%22%231a3a2a%22%2C%22orientation%22%3A%22portrait%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%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%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saponin Sâm Ngọc Linh — KBC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #f0f4f0; color: #1a2e1a; font-size: 14px; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #1a3a2a 0%, #2d6040 100%); color: white; padding: 20px 16px 16px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+  .header h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+  .header p { font-size: 11px; opacity: 0.7; margin-top: 2px; }
+  .stats-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .stat-chip { background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  /* CONTROLS */
+  .controls { background: white; padding: 12px 16px; border-bottom: 1px solid #e2e8f0; position: sticky; top: 76px; z-index: 99; }
+  .search-box { width: 100%; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 8px; }
+  .search-box:focus { border-color: #2d6040; }
+  .filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn { border: 1.5px solid #e2e8f0; background: white; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.15s; color: #64748b; }
+  .filter-btn.active { border-color: #2d6040; background: #2d6040; color: white; }
+  .filter-btn:active { opacity: 0.7; }
+  .sort-row { display: flex; gap: 6px; margin-top: 6px; }
+  .sort-btn { border: 1px solid #e2e8f0; background: white; border-radius: 6px; padding: 4px 8px; font-size: 10px; cursor: pointer; color: #94a3b8; }
+  .sort-btn.active { background: #f0fdf4; border-color: #16a34a; color: #15803d; font-weight: 600; }
+  .result-count { font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+  /* LEGEND */
+  .legend { padding: 8px 16px; background: #fafafa; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .legend-label { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 4px; }
+  .abs-chip { border-radius: 12px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+
+  /* CARDS */
+  .list { padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .card { background: white; border-radius: 12px; border: 1.5px solid #e8f0e8; overflow: hidden; transition: box-shadow 0.15s; }
+  .card:active { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .card.unique { border-color: #f59e0b; border-left: 4px solid #f59e0b; }
+  .card-header { padding: 11px 14px; cursor: pointer; display: flex; align-items: flex-start; gap: 10px; }
+  .card-num { font-size: 11px; color: #94a3b8; font-weight: 600; min-width: 22px; margin-top: 2px; }
+  .card-main { flex: 1; min-width: 0; }
+  .card-name { font-size: 13px; font-weight: 700; color: #1e293b; line-height: 1.3; }
+  .card-name-vi { font-size: 11px; color: #64748b; margin-top: 1px; font-style: italic; }
+  .card-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+  .tag { border-radius: 6px; padding: 2px 7px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+  .tag-nhom-OCT { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+  .tag-nhom-PPT { background: #dbeafe; color: #1e3a8a; border: 1px solid #93c5fd; }
+  .tag-nhom-PPD { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+  .tag-nhom-OA  { background: #f3e8ff; color: #3b0764; border: 1px solid #c4b5fd; }
+  .tag-abs-cao { background: #dcfce7; color: #15803d; }
+  .tag-abs-tb  { background: #fef9c3; color: #854d0e; }
+  .tag-abs-thap { background: #fee2e2; color: #991b1b; }
+  .tag-abs-ratthap { background: #f1f5f9; color: #475569; }
+  .tag-unique { background: #fef08a; color: #713f12; }
+  .card-chevron { font-size: 12px; color: #cbd5e1; margin-top: 2px; transition: transform 0.2s; }
+  .card.open .card-chevron { transform: rotate(180deg); }
+
+  /* DETAIL PANEL */
+  .card-detail { display: none; border-top: 1px solid #f1f5f9; background: #fafdf9; padding: 12px 14px; }
+  .card.open .card-detail { display: block; }
+  .detail-section { margin-bottom: 10px; }
+  .detail-section:last-child { margin-bottom: 0; }
+  .detail-title { font-size: 10px; font-weight: 800; color: #16a34a; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .detail-title.blue { color: #2563eb; }
+  .detail-title.amber { color: #d97706; }
+  .detail-title.purple { color: #7c3aed; }
+  .detail-text { font-size: 12px; color: #374151; line-height: 1.65; }
+  .detail-text b { color: #1e293b; }
+
+  /* CHEMICAL STRUCTURE BOX */
+  .chem-box { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; font-family: 'Courier New', monospace; font-size: 11px; color: #1e3a8a; line-height: 1.8; margin-top: 4px; }
+  .chem-row { display: flex; gap: 6px; align-items: center; margin-bottom: 2px; }
+  .chem-key { color: #64748b; min-width: 70px; font-size: 10px; }
+  .chem-val { color: #1e293b; font-weight: 600; }
+  .sugar-chain { background: #f0fdf4; border: 1px dashed #86efac; border-radius: 6px; padding: 6px 8px; margin-top: 6px; font-size: 10px; line-height: 1.7; color: #166534; }
+  .sugar-chain b { color: #14532d; }
+
+  /* ABSORPTION BAR */
+  .abs-bar-wrap { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+  .abs-bar { height: 6px; border-radius: 3px; flex: 1; background: #e2e8f0; overflow: hidden; }
+  .abs-bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .abs-pct { font-size: 11px; font-weight: 700; min-width: 50px; }
+
+  /* NO RESULTS */
+  .no-results { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 14px; }
+
+  /* FOOTER */
+  .footer { padding: 16px; background: white; border-top: 1px solid #e2e8f0; margin-top: 8px; }
+  .footer p { font-size: 11px; color: #94a3b8; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌿 Saponin Sâm Ngọc Linh</h1>
+  <p>Panax vietnamensis — Phân loại, cấu trúc hóa học &amp; khả năng hấp thụ</p>
+  <div class="stats-row">
+    <div class="stat-chip"><span class="dot" style="background:#f59e0b"></span>15 OCT</div>
+    <div class="stat-chip"><span class="dot" style="background:#3b82f6"></span>18 PPT</div>
+    <div class="stat-chip"><span class="dot" style="background:#22c55e"></span>20 PPD</div>
+    <div class="stat-chip"><span class="dot" style="background:#a855f7"></span>4 OA</div>
+    <div class="stat-chip">57 hoạt chất</div>
+  </div>
+</div>
+
+<div class="controls">
+  <input class="search-box" type="text" id="searchInput" placeholder="🔍 Tìm tên, hoạt tính, cấu trúc...">
+  <div class="filter-row">
+    <button class="filter-btn active" data-group="ALL">Tất cả</button>
+    <button class="filter-btn" data-group="OCT" style="border-color:#f59e0b;color:#92400e">OCT</button>
+    <button class="filter-btn" data-group="PPT" style="border-color:#3b82f6;color:#1e3a8a">PPT</button>
+    <button class="filter-btn" data-group="PPD" style="border-color:#22c55e;color:#14532d">PPD</button>
+    <button class="filter-btn" data-group="OA"  style="border-color:#a855f7;color:#3b0764">OA</button>
+  </div>
+  <div class="sort-row">
+    <button class="sort-btn active" data-sort="default">Mặc định</button>
+    <button class="sort-btn" data-sort="absorb">Hấp thụ ↓</button>
+    <button class="sort-btn" data-sort="sugar">Ít đường ↑</button>
+    <button class="sort-btn" data-sort="unique">Đặc trưng trước</button>
+  </div>
+  <div class="result-count" id="resultCount">57 saponin</div>
+</div>
+
+<div class="legend">
+  <span class="legend-label">Hấp thụ:</span>
+  <span class="abs-chip tag-abs-cao">Cao &gt;30%</span>
+  <span class="abs-chip tag-abs-tb">Trung bình 2–10%</span>
+  <span class="abs-chip tag-abs-thap">Thấp &lt;2%</span>
+  <span class="abs-chip tag-abs-ratthap">Rất thấp &lt;1%</span>
+</div>
+
+<div class="list" id="saponinList"></div>
+
+<div class="footer">
+  <p><b>Nguồn:</b> Van Le et al. (2015), Nguyen et al. (1994), Tran et al. (2001), Frontiers Plant Sci. (2024), PubMed molecular data. Nhấn vào thẻ để xem chi tiết cấu trúc hóa học. Saponin viền vàng = đặc hữu sâm Ngọc Linh.</p>
+</div>
+
+<script>
+const DATA = [
+  // ══════════════════════════════════
+  // NHÓM OCT — OCOTILLOL
+  // ══════════════════════════════════
+  {
+    stt:1, ten:"Ocotillol aglycon", tenVi:"Ocotillol (aglycon)", nhom:"OCT",
+    soGocDuong:0, absScore:10, absMuc:"cao", absText:"~30–37% (24R-epimer)",
+    absPct:37,
+    unique:false,
+    formula:"C₃₀H₅₂O₄", mw:"492.7 g/mol", skeleton:"Dammarane (tetracyclic)",
+    luongDuong:"Aglycon — không có gốc đường",
+    viTriGanDuong:"—",
+    sugarChain:"Không có gốc đường → hấp thu trực tiếp qua khuếch tán thụ động",
+    chuyenHoa:"Sản phẩm cuối của M-R2 qua vi khuẩn ruột. 24R hấp thu tốt hơn 24S ~14 lần.",
+    dacDiem:"Aglycon của nhóm OCT. Cấu trúc vòng epoxy 5 hoặc 6 thành viên tại C-20/21. Không bền trong acid → bào chế cần bảo vệ.",
+    hoatTinh:"Chống viêm mạnh nhất nhóm OCT, ức chế Th17, bảo vệ tim mạch, chống colitis",
+  },
+  {
+    stt:2, ten:"Majonoside R2 (M-R2)", tenVi:"Majonosid R2", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Rất thấp (prodrug)",
+    absPct:2,
+    unique:true,
+    formula:"C₅₂H₈₈O₂₃", mw:"1064.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-glucopyranosyl-(1→2)-β-D-glucopyranose",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] — mạch đường tại C3, C20 không có đường (khác PPD)",
+    chuyenHoa:"M-R2 → Pseudoginsenoside RT4 → Ocotillol (vi khuẩn ruột: Bacteroides, Bifidobacterium)",
+    dacDiem:">5% trọng lượng khô rhizome. Saponin OCT nhiều nhất sâm Ngọc Linh. Không có ở P. ginseng hay P. notoginseng.",
+    hoatTinh:"Chống stress, chống trầm cảm, lo âu, bảo vệ gan, tăng nhận thức, chống ung thư",
+  },
+  {
+    stt:3, ten:"Majonoside R1 (M-R1)", tenVi:"Majonosid R1", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp (prodrug)",
+    absPct:2,
+    unique:true,
+    formula:"C₄₆H₇₈O₁₈", mw:"918.1 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Xyl)",
+    viTriGanDuong:"C-3: β-D-glucopyranosyl-β-D-xylopyranoside",
+    sugarChain:"C3-O-[β-Glc-β-Xyl] — chuỗi đường ngắn hơn M-R2",
+    chuyenHoa:"→ Ocotillol (vi khuẩn ruột)",
+    dacDiem:"Saponin OCT phổ biến thứ 2. Đặc trưng sâm Ngọc Linh. Phân biệt var. vietnamensis vs fuscidiscus.",
+    hoatTinh:"Chống oxy hóa, chống viêm, ức chế tế bào ung thư",
+  },
+  {
+    stt:4, ten:"Pseudoginsenoside RT4 (PRT4)", tenVi:"Pseudoginsenoside RT4", nhom:"OCT",
+    soGocDuong:1, absScore:5, absMuc:"tb", absText:"Trung bình (trung gian)",
+    absPct:10,
+    unique:true,
+    formula:"C₄₆H₇₈O₁₈", mw:"918.1 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-glucopyranose",
+    sugarChain:"C3-O-β-Glc — chỉ 1 gốc đường, hấp thu tốt hơn M-R2",
+    chuyenHoa:"Trung gian quan trọng: M-R2 → PRT4 → Ocotillol. Có hoạt tính riêng biệt.",
+    dacDiem:"1 gốc đường. Hấp thu trực tiếp một phần. Là trung gian chuyển hóa của M-R2.",
+    hoatTinh:"Ức chế Th17 cells, chống viêm ruột, hỗ trợ IBD, colitis",
+  },
+  {
+    stt:5, ten:"Vinaginsenoside R2 (V-R2)", tenVi:"Vinaginsenoside R2", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp (prodrug)",
+    absPct:2,
+    unique:true,
+    formula:"C₅₄H₉₀O₂₄", mw:"1106.3 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường + 1 nhóm acetyl",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; có nhóm acetyl tại C-2' của Glc đầu",
+    sugarChain:"Monoacetyl majonoside-R2 = acetyl-MR2. Nhóm acetyl làm kém hấp thu hơn M-R2.",
+    chuyenHoa:"→ M-R2 (giải acetyl) → PRT4 → Ocotillol",
+    dacDiem:"Dạng acetyl hóa của M-R2. Phát hiện trong rễ sâm Ngọc Linh. Ổn định hơn M-R2.",
+    hoatTinh:"Chống viêm thần kinh, chống melanin hóa (B16-F10 cells)",
+  },
+  {
+    stt:6, ten:"Vinaginsenoside R11 (V-R11)", tenVi:"Vinaginsenoside R11", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp (prodrug)",
+    absPct:2,
+    unique:true,
+    formula:"C₅₂H₈₈O₂₃", mw:"1064.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3 hoặc C-20 vị trí khác V-R2",
+    sugarChain:"Đồng phân vị trí của M-R2. Dùng chuẩn trong HPLC/CAD kiểm soát chất lượng VG.",
+    chuyenHoa:"→ Ocotillol (vi khuẩn ruột)",
+    dacDiem:"Một trong 9 saponin chuẩn định lượng VG (HPLC). Phổ biến trong rhizome.",
+    hoatTinh:"Chống melanin hóa, chống oxy hóa",
+  },
+  {
+    stt:7, ten:"Pseudoginsenoside F11", tenVi:"24(S)-Pseudoginsenoside F11", nhom:"OCT",
+    soGocDuong:1, absScore:5, absMuc:"tb", absText:"Trung bình–thấp",
+    absPct:8,
+    unique:false,
+    formula:"C₄₆H₇₈O₁₈", mw:"918.1 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-glucopyranose",
+    sugarChain:"C3-O-β-Glc — 1 gốc đường, hấp thu khá trong nhóm OCT",
+    chuyenHoa:"→ Ocotillol. Cũng có trong P. quinquefolius.",
+    dacDiem:"Cấu hình 24(S). Có trong nhiều loài Panax. Hấp thu tương đối tốt do ít đường.",
+    hoatTinh:"Kháng khuẩn, chống viêm, bảo vệ hệ thần kinh",
+  },
+  {
+    stt:8, ten:"Vinaginsenoside R1 (V-R1)", tenVi:"Vinaginsenoside R1", nhom:"OCT",
+    soGocDuong:1, absScore:5, absMuc:"tb", absText:"Trung bình–thấp",
+    absPct:7,
+    unique:true,
+    formula:"C₄₈H₈₀O₁₉", mw:"976.1 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"1 gốc đường + 1 nhóm acetyl",
+    viTriGanDuong:"C-3: β-D-Glc; acetyl tại C-2' của Glc",
+    sugarChain:"Monoacetyl 24(S)-pseudoginsenoside F11. 1 đường + acetyl.",
+    chuyenHoa:"→ Pseudoginsenoside F11 → Ocotillol",
+    dacDiem:"Dạng acetyl của F11. Nhiều trong cấy mô (hairy root). Đặc trưng SNL.",
+    hoatTinh:"Kháng u, chống viêm",
+  },
+  {
+    stt:9, ten:"Majonoside F1", tenVi:"Majoroside F1", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₈H₈₀O₁₉", mw:"960.1 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3",
+    sugarChain:"C3-O-[β-Glc-β-Glc] với biến thể ở vị trí C-20",
+    chuyenHoa:"→ Ocotillol",
+    dacDiem:"Saponin OCT hiếm, phát hiện song song với vina-ginsenoside R9 trong điều tra thứ 2.",
+    hoatTinh:"Chưa nghiên cứu đầy đủ",
+  },
+  {
+    stt:10, ten:"Vinaginsenoside R5 (V-R5)", tenVi:"Vinaginsenoside R5", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₈H₈₂O₁₉", mw:"962.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường (liên kết α-glucosyl hiếm)",
+    viTriGanDuong:"C-3 hoặc C-20 với liên kết α-glycosidic",
+    sugarChain:"Liên kết α-glucosyl — rất hiếm trong tự nhiên. Một trong 2 saponin OCT có liên kết α.",
+    chuyenHoa:"→ Ocotillol (chậm hơn do liên kết α ít bị enzyme cắt)",
+    dacDiem:"Saponin mới trong điều tra thứ 2. Liên kết α-glucosyl làm chậm chuyển hóa ruột.",
+    hoatTinh:"Chống oxy hóa",
+  },
+  {
+    stt:11, ten:"Vinaginsenoside R6 (V-R6)", tenVi:"Vinaginsenoside R6", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₈H₈₂O₁₉", mw:"962.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường (α-glucosyl)",
+    viTriGanDuong:"Đồng phân V-R5",
+    sugarChain:"Đồng phân V-R5 với liên kết α-glucosyl tại vị trí khác",
+    chuyenHoa:"→ Ocotillol",
+    dacDiem:"Đồng phân V-R5. Cả hai đều có liên kết α-glucosyl hiếm gặp.",
+    hoatTinh:"Chống oxy hóa",
+  },
+  {
+    stt:12, ten:"Vinaginsenoside R7 (V-R7)", tenVi:"Vinaginsenoside R7", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₈H₈₂O₁₉", mw:"962.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3",
+    sugarChain:"C3-O-[β-Glc-β-Glc], đồng phân vị trí của M-R2",
+    chuyenHoa:"→ Ocotillol",
+    dacDiem:"Ghi nhận hoạt tính chống viêm thần kinh rõ rệt trong nghiên cứu Xia et al. 2022.",
+    hoatTinh:"Chống viêm thần kinh (neuroinflammation)",
+  },
+  {
+    stt:13, ten:"Pseudoginsenoside RC1", tenVi:"Pseudoginsenoside RC1", nhom:"OCT",
+    soGocDuong:2, absScore:1, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₈H₈₂O₁₉", mw:"962.2 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3",
+    sugarChain:"C3-O-disaccharide (cấu trúc xác định qua MS phân mảnh)",
+    chuyenHoa:"→ Ocotillol",
+    dacDiem:"Phát hiện qua metabolomics không nhắm mục tiêu. Phân biệt var. vietnamensis và fuscidiscus.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:14, ten:"Vinaginsenoside R13 (V-R13)", tenVi:"Vinaginsenoside R13", nhom:"OCT",
+    soGocDuong:3, absScore:1, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:true,
+    formula:"C₅₄H₉₂O₂₇", mw:"1196.3 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"3 gốc đường (Xyl + Glc + Glc)",
+    viTriGanDuong:"C-3: Xyl-(1→2)-β-Glc; C-20: β-Glc",
+    sugarChain:"MS: [M-H]⁻ 915.5 → mất Xyl(132) → mất Glc(162) → mất Glc(162)",
+    chuyenHoa:"→ M-R2 → PRT4 → Ocotillol (cần 3 bước)",
+    dacDiem:"3 gốc đường. Phân biệt var. vietnamensis vs fuscidiscus qua metabolomics.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:15, ten:"Vinaginsenoside R14 (V-R14)", tenVi:"Vinaginsenoside R14", nhom:"OCT",
+    soGocDuong:3, absScore:1, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:true,
+    formula:"C₅₄H₉₂O₂₇", mw:"1196.3 g/mol", skeleton:"Ocotillol dammarane",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-3: trisaccharide",
+    sugarChain:"Đồng phân V-R13, chuỗi đường khác vị trí",
+    chuyenHoa:"→ Ocotillol (3 bước)",
+    dacDiem:"Phân biệt 2 varietat của sâm Ngọc Linh.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+
+  // ══════════════════════════════════
+  // NHÓM PPT — PROTOPANAXATRIOL
+  // ══════════════════════════════════
+  {
+    stt:16, ten:"PPT aglycon (Protopanaxatriol)", tenVi:"Protopanaxatriol", nhom:"PPT",
+    soGocDuong:0, absScore:9, absMuc:"tb", absText:"~3.7% (không bền acid)",
+    absPct:4,
+    unique:false,
+    formula:"C₃₀H₅₂O₄", mw:"476.7 g/mol", skeleton:"Dammarane-24-ene triol",
+    luongDuong:"Aglycon — không có gốc đường",
+    viTriGanDuong:"OH tự do tại C-3, C-6, C-12, C-20",
+    sugarChain:"Không có đường. Nhưng không bền: phân hủy 40% ở pH 1.2 sau 4h.",
+    chuyenHoa:"Sản phẩm cuối của Rg1, Re. Hấp thu qua bạch huyết mạc treo ruột → ester hóa acid béo → tích gan.",
+    dacDiem:"Thấp hơn PPD aglycon do kém bền trong dịch vị. Có thêm –OH tại C-6 so với PPD.",
+    hoatTinh:"Giãn mạch (NO-dependent), bảo vệ nội mô, chống viêm, tim mạch",
+  },
+  {
+    stt:17, ten:"Ginsenoside Rg1 (G-Rg1)", tenVi:"Ginsenoside Rg1", nhom:"PPT",
+    soGocDuong:2, absScore:7, absMuc:"tb", absText:"~2–3% (cao nhất nhóm glycosyl)",
+    absPct:3,
+    unique:false,
+    formula:"C₄₂H₇₂O₁₄", mw:"801.0 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-glucopyranose; C-20: β-D-glucopyranose",
+    sugarChain:"C6-O-β-Glc ; C20-O-β-Glc — đường tại C6 và C20 (đặc trưng PPT: có đường tại C6)",
+    chuyenHoa:"→ Rh1 (mất Glc-C20) hoặc Rg2 (mất Rha-C6) → F1/Rh1 → PPT",
+    dacDiem:"Tính thấm cao nhất trong saponin glycosyl hóa (Kim et al.). Có thể hấp thu trực tiếp 1 phần qua passive diffusion.",
+    hoatTinh:"Thần kinh (Alzheimer, Parkinson), miễn dịch, chống oxy hóa, tăng hồng cầu, giảm đường huyết",
+  },
+  {
+    stt:18, ten:"Ginsenoside Re (G-Re)", tenVi:"Ginsenoside Re", nhom:"PPT",
+    soGocDuong:3, absScore:5, absMuc:"thap", absText:"~1–2%",
+    absPct:2,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường (β-D-Glc + α-L-Rha + β-D-Glc)",
+    viTriGanDuong:"C-6: β-Glc-(1→2)-α-Rha; C-20: β-D-Glc",
+    sugarChain:"C6-O-[β-Glc(1→2)α-Rha] ; C20-O-β-Glc — chuỗi 3 đường",
+    chuyenHoa:"→ Rg1 (mất Rha) hoặc Rg2 (mất Glc-C20) → PPT",
+    dacDiem:"3 gốc đường. Tmax 2–8h (chậm hơn Rg1). Nhiều trong lá và rễ non.",
+    hoatTinh:"Chống đái tháo đường, tim mạch, kháng virus",
+  },
+  {
+    stt:19, ten:"Ginsenoside Rh1 (G-Rh1)", tenVi:"Ginsenoside Rh1", nhom:"PPT",
+    soGocDuong:1, absScore:8, absMuc:"tb", absText:"Thấp–trung bình (Tmax 0.5–3h)",
+    absPct:8,
+    unique:false,
+    formula:"C₃₆H₆₂O₉", mw:"639.9 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-glucopyranose",
+    sugarChain:"C6-O-β-Glc — chỉ 1 đường. Hấp thu nhanh (Tmax 0.5–3h).",
+    chuyenHoa:"Trung gian: Rg1 → Rh1 → PPT. Cũng tạo trực tiếp từ Re qua mất Rha.",
+    dacDiem:"1 gốc đường → hấp thu nhanh. Dạng saponin minor, nhiều hơn sau chế biến.",
+    hoatTinh:"Chống ung thư gan (HepG2), chống viêm, bảo vệ gan",
+  },
+  {
+    stt:20, ten:"20(R)-Ginsenoside Rh1", tenVi:"20(R)-Ginsenoside Rh1", nhom:"PPT",
+    soGocDuong:1, absScore:8, absMuc:"tb", absText:"Thấp–trung bình",
+    absPct:7,
+    unique:false,
+    formula:"C₃₆H₆₂O₉", mw:"639.9 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-glucopyranose; C-20 cấu hình R",
+    sugarChain:"Đồng phân R của Rh1. Hoạt tính sinh học khác nhau do cấu hình C-20.",
+    chuyenHoa:"→ PPT (cấu hình R). Đồng phân lập thể quan trọng.",
+    dacDiem:"Phát hiện trong sâm Ngọc Linh cùng dạng 20(S). Hoạt tính khác nhau giữa 2 đồng phân.",
+    hoatTinh:"Chống viêm, giải độc, khác Rh1-20S ở một số mục tiêu",
+  },
+  {
+    stt:21, ten:"Ginsenoside Rg2 (G-Rg2)", tenVi:"Ginsenoside Rg2", nhom:"PPT",
+    soGocDuong:2, absScore:6, absMuc:"thap", absText:"~1–2% (Tmax 1–6h)",
+    absPct:2,
+    unique:false,
+    formula:"C₄₂H₇₂O₁₃", mw:"785.0 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"2 gốc đường (β-D-Glc + α-L-Rha)",
+    viTriGanDuong:"C-6: β-Glc-(1→2)-α-Rha",
+    sugarChain:"C6-O-[β-Glc(1→2)α-Rha] — chuỗi đường tại C6, không có đường C20",
+    chuyenHoa:"→ Rh1 → PPT. Từ Re qua mất Glc-C20.",
+    dacDiem:"Không có đường tại C-20 (khác Rg1). Tmax 1–6h.",
+    hoatTinh:"Bảo vệ thần kinh, chống oxy hóa, cải thiện trí nhớ",
+  },
+  {
+    stt:22, ten:"Notoginsenoside R1 (N-R1)", tenVi:"Notoginsenoside R1", nhom:"PPT",
+    soGocDuong:3, absScore:4, absMuc:"ratthap", absText:"Rất thấp (<1%)",
+    absPct:1,
+    unique:false,
+    formula:"C₄₇H₈₀O₁₈", mw:"933.1 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường (β-D-Xyl + β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-Xyl; C-20: β-Glc-(1→2)-β-Glc",
+    sugarChain:"C6-O-β-Xyl ; C20-O-[β-Glc(1→2)β-Glc] — xylose tại C6 đặc trưng N-R1",
+    chuyenHoa:"→ Rg1 → PPT. Tan tốt nhưng thấm màng rất kém do phân tử lớn.",
+    dacDiem:"Đặc trưng P. notoginseng, cũng có SNL. Tan tốt nhưng Papp thấp (<5×10⁻⁷ cm/s).",
+    hoatTinh:"Bảo vệ tim mạch, chống huyết khối, chống đột quỵ",
+  },
+  {
+    stt:23, ten:"Notoginsenoside R2", tenVi:"Notoginsenoside R2", nhom:"PPT",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₇H₈₀O₁₈", mw:"933.1 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6 và C-20",
+    sugarChain:"Đồng phân N-R1, vị trí đường khác nhau",
+    chuyenHoa:"→ PPT",
+    dacDiem:"Phát hiện qua UPLC-MS metabolomics SNL.",
+    hoatTinh:"Chống viêm, tim mạch",
+  },
+  {
+    stt:24, ten:"Notoginsenoside R6", tenVi:"Notoginsenoside R6", nhom:"PPT",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6 và C-20",
+    sugarChain:"Chuỗi 3 đường tương tự N-R1 nhưng cấu trúc khác",
+    chuyenHoa:"→ PPT",
+    dacDiem:"Phát hiện qua điều tra saponin lần 2 (vina-ginsenosides R3–R9).",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:25, ten:"Notoginsenoside Fa", tenVi:"Notoginsenoside Fa", nhom:"PPT",
+    soGocDuong:4, absScore:2, absMuc:"ratthap", absText:"Cực thấp (4 đường)",
+    absPct:1,
+    unique:false,
+    formula:"C₅₃H₉₀O₂₂", mw:"1095.3 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"4 gốc đường",
+    viTriGanDuong:"C-6: disaccharide; C-20: disaccharide",
+    sugarChain:"Tetrasaccharide — 4 gốc đường. Tmax 2–8h, hấp thu cực kém.",
+    chuyenHoa:"→ Re → Rg1 → PPT (cần 4 bước deglycosyl)",
+    dacDiem:"4 gốc đường = khó hấp thu nhất nhóm PPT. Nhiều trong SNL hơn P. ginseng.",
+    hoatTinh:"Chống ung thư",
+  },
+  {
+    stt:26, ten:"Quinquenoside R1", tenVi:"Quinquenoside R1", nhom:"PPT",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₇H₈₀O₁₈", mw:"933.1 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6: β-D-Glc; C-20: Glc-β-Glc",
+    sugarChain:"Đặc trưng P. quinquefolius, phát hiện trong SNL qua điều tra thứ 2.",
+    chuyenHoa:"→ Rg1 → PPT",
+    dacDiem:"Đặc trưng sâm Mỹ, cũng có trong sâm Ngọc Linh (hàm lượng nhỏ).",
+    hoatTinh:"Chống oxy hóa, miễn dịch",
+  },
+  {
+    stt:27, ten:"Pseudoginsenoside RS1", tenVi:"Pseudoginsenoside RS1", nhom:"PPT",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp (acetyl hóa)",
+    absPct:1,
+    unique:false,
+    formula:"C₅₀H₈₄O₁₉", mw:"989.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường + 1 acetyl",
+    viTriGanDuong:"= Monoacetyl-ginsenoside Re",
+    sugarChain:"Re có thêm nhóm acetyl. Kém hấp thu hơn Re do acetyl block enzyme.",
+    chuyenHoa:"→ Re (giải acetyl) → Rg1 → PPT",
+    dacDiem:"= Monoacetyl Re. Nhóm acetyl làm chậm deglycosyl.",
+    hoatTinh:"Ức chế acetylcholinesterase (IC₅₀ 79.58 µM — hỗ trợ Alzheimer)",
+  },
+  {
+    stt:28, ten:"20-Gluco-ginsenoside Rf", tenVi:"20-Gluco-ginsenoside Rf", nhom:"PPT",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6: β-Glc-(1→2)-β-Glc; C-20: β-Glc",
+    sugarChain:"Rf thêm Glc tại C-20. Phát hiện lần đầu trong SNL điều tra thứ 2.",
+    chuyenHoa:"→ Rf (mất Glc-C20) → Rh1 → PPT",
+    dacDiem:"Lần đầu tiên phân lập từ sâm Ngọc Linh (Nguyen 1999).",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:29, ten:"Ginsenoside Rh4", tenVi:"Ginsenoside Rh4", nhom:"PPT",
+    soGocDuong:1, absScore:8, absMuc:"tb", absText:"Trung bình (1 đường, Tmax nhanh)",
+    absPct:8,
+    unique:false,
+    formula:"C₃₆H₆₀O₈", mw:"621.9 g/mol", skeleton:"Protopanaxatriol (dehydro-type)",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-Glc",
+    sugarChain:"C6-O-β-Glc. Dạng dehydro (nối đôi Δ20,22 hoặc Δ20,21).",
+    chuyenHoa:"→ PPT. Tăng mạnh sau steaming (hồng sâm). Tmax 0.5–3h.",
+    dacDiem:"Saponin PPT hiếm, 1 đường, hình thành chủ yếu qua nhiệt (steaming).",
+    hoatTinh:"Chống ung thư đại tràng, gây apoptosis",
+  },
+  {
+    stt:30, ten:"Ginsenoside Rh5", tenVi:"Ginsenoside Rh5", nhom:"PPT",
+    soGocDuong:1, absScore:8, absMuc:"tb", absText:"Trung bình (1 đường)",
+    absPct:7,
+    unique:false,
+    formula:"C₃₆H₆₂O₉", mw:"639.9 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-6: β-D-Glc",
+    sugarChain:"C6-O-β-Glc — 1 đường như Rh1, cấu hình C-20 khác.",
+    chuyenHoa:"→ PPT",
+    dacDiem:"Mới phát hiện lần đầu trong SNL (Tran 2001). 1 gốc đường → hấp thu khá.",
+    hoatTinh:"Bảo vệ gan (D-GalN/TNF-α model)",
+  },
+  {
+    stt:31, ten:"Hypenoside XVII", tenVi:"Hypenoside XVII", nhom:"PPT",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6 và C-20",
+    sugarChain:"Cấu trúc từ P. japonicus, phát hiện trong SNL.",
+    chuyenHoa:"→ PPT",
+    dacDiem:"Từ P. japonicus (sâm Nhật), cũng có trong SNL với lượng nhỏ.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:32, ten:"Hypenoside IX", tenVi:"Hypenoside IX", nhom:"PPT",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxatriol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-6 và C-20",
+    sugarChain:"Saponin PPT từ P. japonicus",
+    chuyenHoa:"→ PPT",
+    dacDiem:"Đồng phân Hypenoside XVII trong chuỗi saponin từ P. japonicus.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:33, ten:"Protopanaxatriol oxide sapogenin II", tenVi:"PPT oxide sapogenin II", nhom:"PPT",
+    soGocDuong:0, absScore:9, absMuc:"tb", absText:"Trung bình (aglycon)",
+    absPct:4,
+    unique:false,
+    formula:"C₃₀H₅₂O₅", mw:"508.7 g/mol", skeleton:"Protopanaxatriol oxide",
+    luongDuong:"Aglycon — không có đường",
+    viTriGanDuong:"—",
+    sugarChain:"Sapogenin (aglycon) dạng oxide của PPT. Hấp thu trực tiếp.",
+    chuyenHoa:"Hấp thu trực tiếp, không cần chuyển hóa vi sinh",
+    dacDiem:"Sapogenin hiếm phát hiện trong SNL (Tran 2001). Phân tử nhỏ, hấp thu tốt.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+
+  // ══════════════════════════════════
+  // NHÓM PPD — PROTOPANAXADIOL
+  // ══════════════════════════════════
+  {
+    stt:34, ten:"PPD aglycon (Protopanaxadiol)", tenVi:"Protopanaxadiol", nhom:"PPD",
+    soGocDuong:0, absScore:10, absMuc:"cao", absText:"~36.8% — Cao nhất tất cả saponin",
+    absPct:37,
+    unique:false,
+    formula:"C₃₀H₅₂O₃", mw:"460.7 g/mol", skeleton:"Dammarane-24-ene diol",
+    luongDuong:"Aglycon — không có gốc đường",
+    viTriGanDuong:"OH tự do tại C-3, C-12, C-20",
+    sugarChain:"Không có đường. Hấp thu trực tiếp. First-pass metabolism cao ở gan.",
+    chuyenHoa:"Sản phẩm cuối của toàn bộ chuỗi PPD (Rb1→Rd→F2→CK→PPD).",
+    dacDiem:"Sinh khả dụng 36.8% ± 12.4%, cao hơn Rg3 và Rh2 ít nhất 10 lần. MW thấp (460 g/mol).",
+    hoatTinh:"Kháng ung thư mạnh nhất, chống viêm, bảo vệ thần kinh",
+  },
+  {
+    stt:35, ten:"Compound K (CK / 20-O-β-Glc-PPD)", tenVi:"Compound K (Ginsenoside CK)", nhom:"PPD",
+    soGocDuong:1, absScore:9, absMuc:"cao", absText:"~35% — Cao thứ 2",
+    absPct:35,
+    unique:false,
+    formula:"C₃₆H₆₂O₈", mw:"622.9 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-20: β-D-glucopyranose",
+    sugarChain:"C20-O-β-Glc — chỉ 1 đường tại C-20. Khuếch tán thụ động chủ yếu.",
+    chuyenHoa:"Trung gian cuối: F2 → CK → PPD. Được tạo ra trực tiếp từ vi khuẩn ruột.",
+    dacDiem:"Sinh khả dụng ~35%. Ít bị P-gp nhận diện. Khuếch tán thụ động qua Caco-2 (Papp 8.65×10⁻⁷ cm/s).",
+    hoatTinh:"Kháng ung thư (nhiều dòng tế bào), chống đái tháo đường, chống viêm khớp dạng thấp",
+  },
+  {
+    stt:36, ten:"Ginsenoside Rh2 (G-Rh2) 20S", tenVi:"Ginsenoside Rh2", nhom:"PPD",
+    soGocDuong:1, absScore:6, absMuc:"thap", absText:"<3% (bị P-gp mạnh)",
+    absPct:2,
+    unique:false,
+    formula:"C₃₆H₆₂O₈", mw:"622.9 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-glucopyranose",
+    sugarChain:"C3-O-β-Glc — đường tại C-3 (khác CK đường tại C-20!). P-gp efflux mạnh.",
+    chuyenHoa:"→ PPD. Rg3 → Rh2 → PPD.",
+    dacDiem:"MW = CK nhưng sinh khả dụng <3% vì P-gp efflux cao. Verapamil tăng hấp thu >30%.",
+    hoatTinh:"Kháng ung thư, đảo ngược kháng thuốc MDR, cải thiện insulin sensitivity",
+  },
+  {
+    stt:37, ten:"Ginsenoside Rg3 (G-Rg3) 20S", tenVi:"Ginsenoside Rg3", nhom:"PPD",
+    soGocDuong:2, absScore:5, absMuc:"thap", absText:"<3% (P-gp substrate)",
+    absPct:2,
+    unique:false,
+    formula:"C₄₂H₇₂O₁₃", mw:"785.0 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] — 2 đường tại C-3. P-gp efflux ratio cao.",
+    chuyenHoa:"→ Rh2 → PPD. Tăng mạnh sau steaming (hồng sâm).",
+    dacDiem:"Dùng điều trị ung thư ở TQ. Tmax 1–6h. P-gp blocker tăng AUC đáng kể.",
+    hoatTinh:"Kháng ung thư, kháng huyết khối, bảo vệ tim, chống viêm",
+  },
+  {
+    stt:38, ten:"Ginsenoside F2", tenVi:"Ginsenoside F2", nhom:"PPD",
+    soGocDuong:2, absScore:6, absMuc:"thap", absText:"Thấp (trung gian)",
+    absPct:3,
+    unique:false,
+    formula:"C₃₆H₆₂O₉", mw:"638.9 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường (β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-Glc; C-20: β-D-Glc",
+    sugarChain:"C3-O-β-Glc ; C20-O-β-Glc — 1 đường mỗi vị trí",
+    chuyenHoa:"Trung gian: Rd → F2 → CK → PPD",
+    dacDiem:"Saponin trung gian quan trọng. Ít hơn CK trong máu sau uống sâm.",
+    hoatTinh:"Kháng ung thư vú (MCF-7), đại tràng",
+  },
+  {
+    stt:39, ten:"Ginsenoside Rd (G-Rd)", tenVi:"Ginsenoside Rd", nhom:"PPD",
+    soGocDuong:3, absScore:4, absMuc:"ratthap", absText:"<5%",
+    absPct:3,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"3 gốc đường (β-D-Glc + β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; C-20: β-D-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] ; C20-O-β-Glc — 3 đường tổng cộng",
+    chuyenHoa:"→ F2 → CK → PPD. Tmax 2–8h.",
+    dacDiem:"3 gốc đường. Tăng 4,2× từ 2→5 năm tuổi. Một trong saponin định lượng chuẩn VG.",
+    hoatTinh:"Thần kinh (bảo vệ tế bào), chống viêm, chống oxy hóa",
+  },
+  {
+    stt:40, ten:"Ginsenoside Rb1 (G-Rb1)", tenVi:"Ginsenoside Rb1", nhom:"PPD",
+    soGocDuong:4, absScore:2, absMuc:"ratthap", absText:"0.78% (cực thấp)",
+    absPct:1,
+    unique:false,
+    formula:"C₅₄H₉₂O₂₃", mw:"1109.3 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"4 gốc đường (Glc+Glc tại C3; Glc+Glc tại C20)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; C-20: β-Glc-(1→6)-β-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] ; C20-O-[β-Glc(1→6)β-Glc] — 4 đường ở 2 vị trí",
+    chuyenHoa:"→ Rd → F2 → CK → PPD (4 bước vi khuẩn ruột). Tmax 2–8h.",
+    dacDiem:"4 gốc đường, MW 1109 g/mol. Sinh khả dụng 0.78%. Con đường dài nhất 4 bước.",
+    hoatTinh:"Chống ung thư, chống trầm cảm, giảm cân, kháng viêm khớp",
+  },
+  {
+    stt:41, ten:"Ginsenoside Rb2 (G-Rb2)", tenVi:"Ginsenoside Rb2", nhom:"PPD",
+    soGocDuong:4, absScore:1, absMuc:"ratthap", absText:"0.08% — Thấp nhất nhóm PPD",
+    absPct:1,
+    unique:false,
+    formula:"C₅₃H₉₀O₂₂", mw:"1079.3 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"4 gốc đường (Glc+Glc tại C3; Glc+Ara(f) tại C20)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; C-20: α-L-Ara(f)-(1→6)-β-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] ; C20-O-[α-Ara(f)(1→6)β-Glc] — arabinofuranose tại C20",
+    chuyenHoa:"→ Rc → CK → PPD",
+    dacDiem:"Sinh khả dụng chỉ 0.08% — thấp nhất nhóm PPD. Arabinofuranose kém bị enzyme cắt.",
+    hoatTinh:"Chống oxy hóa, tim mạch",
+  },
+  {
+    stt:42, ten:"Ginsenoside Rb3 (G-Rb3)", tenVi:"Ginsenoside Rb3", nhom:"PPD",
+    soGocDuong:4, absScore:1, absMuc:"ratthap", absText:"0.52%",
+    absPct:1,
+    unique:false,
+    formula:"C₅₃H₉₀O₂₂", mw:"1079.3 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"4 gốc đường (Glc+Glc tại C3; Glc+Xyl tại C20)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; C-20: β-Xyl-(1→6)-β-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] ; C20-O-[β-Xyl(1→6)β-Glc] — xylose tại C20",
+    chuyenHoa:"→ CK → PPD",
+    dacDiem:"Nhiều trong lá sâm Ngọc Linh hơn rễ. 4 đường, sinh khả dụng 0.52%.",
+    hoatTinh:"Bảo vệ gan, chống oxy hóa",
+  },
+  {
+    stt:43, ten:"Ginsenoside Rc (G-Rc)", tenVi:"Ginsenoside Rc", nhom:"PPD",
+    soGocDuong:4, absScore:1, absMuc:"ratthap", absText:"Cực thấp (4 đường)",
+    absPct:1,
+    unique:false,
+    formula:"C₅₃H₉₀O₂₂", mw:"1079.3 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"4 gốc đường (Glc+Glc tại C3; Glc+Ara(p) tại C20)",
+    viTriGanDuong:"C-3: β-Glc-(1→2)-β-Glc; C-20: α-L-Ara(p)-(1→6)-β-Glc",
+    sugarChain:"C3-O-[β-Glc(1→2)β-Glc] ; C20-O-[α-Ara(p)(1→6)β-Glc] — arabinopyranose tại C20",
+    chuyenHoa:"Rc → Mb → Mc → CK → PPD (qua Bacteroides HJ-15). Hoặc: Rc → Rd → F2 → CK → PPD.",
+    dacDiem:"Con đường chuyển hóa phức tạp nhất. 2 con đường song song. Arabinopyranose kém cắt.",
+    hoatTinh:"Miễn dịch, chống mệt mỏi",
+  },
+  {
+    stt:44, ten:"Ginsenoside Rg5", tenVi:"Ginsenoside Rg5", nhom:"PPD",
+    soGocDuong:1, absScore:7, absMuc:"tb", absText:"Thấp–trung bình (1 đường)",
+    absPct:5,
+    unique:false,
+    formula:"C₄₂H₇₀O₁₂", mw:"767.0 g/mol", skeleton:"Protopanaxadiol (dehydro)",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-Glc; nối đôi Δ20(22)",
+    sugarChain:"C3-O-β-Glc + nối đôi Δ20(22). Tăng 6–24 lần sau steaming.",
+    chuyenHoa:"→ PPD. Hình thành chủ yếu khi chế biến nhiệt (black ginseng > red ginseng).",
+    dacDiem:"Saponin nhiệt-chuyển hóa. 1 đường + nối đôi mới. Không có trong sâm tươi nhiều.",
+    hoatTinh:"Kháng ung thư phổi, kháng viêm",
+  },
+  {
+    stt:45, ten:"Ginsenoside Rk1", tenVi:"Ginsenoside Rk1", nhom:"PPD",
+    soGocDuong:1, absScore:7, absMuc:"tb", absText:"Thấp–trung bình (1 đường)",
+    absPct:5,
+    unique:false,
+    formula:"C₄₂H₇₀O₁₂", mw:"767.0 g/mol", skeleton:"Protopanaxadiol (dehydro)",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-Glc; nối đôi Δ20(21)",
+    sugarChain:"C3-O-β-Glc + nối đôi Δ20(21). Đồng phân Rg5. Tăng sau steaming.",
+    chuyenHoa:"→ PPD. Tmax nhanh (0.5–3h) sau steaming.",
+    dacDiem:"Đồng phân vị trí nối đôi của Rg5. Cả hai tăng mạnh khi hấp/steaming sâm.",
+    hoatTinh:"Kháng ung thư phổi (A549), kháng huyết khối",
+  },
+  {
+    stt:46, ten:"Ginsenoside XVII (Gypenoside XVII)", tenVi:"Gypenoside XVII", nhom:"PPD",
+    soGocDuong:3, absScore:3, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₈₂O₁₈", mw:"947.2 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-3 và C-20",
+    sugarChain:"Từ Gynostemma pentaphyllum (dây lá đinh lăng). Cũng tìm thấy trong SNL.",
+    chuyenHoa:"→ Rb2 → CK → PPD",
+    dacDiem:"Chia sẻ cấu trúc với Gynostemma. Hàm lượng nhỏ trong SNL.",
+    hoatTinh:"Hạ đường huyết, tim mạch",
+  },
+  {
+    stt:47, ten:"Malonyl-Ginsenoside Rb1", tenVi:"Malonyl-Ginsenoside Rb1", nhom:"PPD",
+    soGocDuong:4, absScore:1, absMuc:"ratthap", absText:"Cực thấp (malonyl hóa)",
+    absPct:1,
+    unique:false,
+    formula:"C₅₇H₉₄O₂₆", mw:"1195.4 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"4 đường + nhóm malonyl",
+    viTriGanDuong:"C-3: disaccharide malonyl hóa",
+    sugarChain:"Rb1 + nhóm malonyl (-CO-CH₂-COOH). Kém hấp thu hơn Rb1.",
+    chuyenHoa:"→ Rb1 (mất malonyl) → CK → PPD",
+    dacDiem:"Dạng malonyl hóa của Rb1. Nhiều trong cấy mô tế bào SNL (2024).",
+    hoatTinh:"Tiền chất Rb1",
+  },
+  {
+    stt:48, ten:"Vinaginsenoside R3 (V-R3)", tenVi:"Vinaginsenoside R3", nhom:"PPD",
+    soGocDuong:1, absScore:7, absMuc:"tb", absText:"Thấp–trung bình (1 đường)",
+    absPct:5,
+    unique:true,
+    formula:"C₃₆H₆₂O₈", mw:"622.9 g/mol", skeleton:"Dammarenediol II-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-Glc",
+    sugarChain:"Glycoside đầu tiên tự nhiên của dammarenediol II. C3-O-β-Glc.",
+    chuyenHoa:"→ Dammarenediol II → PPD",
+    dacDiem:"Saponin PPD mới, glycoside đầu tiên của dammarenediol II được phân lập. Đặc trưng SNL.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:49, ten:"Vinaginsenoside R4 (V-R4)", tenVi:"Vinaginsenoside R4", nhom:"PPD",
+    soGocDuong:2, absScore:5, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₂H₇₂O₁₃", mw:"785.0 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3 và/hoặc C-20",
+    sugarChain:"Disaccharide. Phân tích MS xác nhận qua loss 162 Da (Glc).",
+    chuyenHoa:"→ PPD",
+    dacDiem:"Saponin PPD mới từ điều tra thứ 2 sâm Ngọc Linh.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:50, ten:"Vinaginsenoside R8 (V-R8)", tenVi:"Vinaginsenoside R8", nhom:"PPD",
+    soGocDuong:2, absScore:4, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₂H₇₂O₁₄", mw:"801.0 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3 và C-20",
+    sugarChain:"Disaccharide. Cấu trúc xác định qua ¹H NMR và MS.",
+    chuyenHoa:"→ PPD",
+    dacDiem:"Saponin PPD mới điều tra thứ 2. Bảo vệ gan.",
+    hoatTinh:"Bảo vệ gan",
+  },
+  {
+    stt:51, ten:"Vinaginsenoside R9 (V-R9)", tenVi:"Vinaginsenoside R9", nhom:"PPD",
+    soGocDuong:2, absScore:4, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₂H₇₂O₁₄", mw:"801.0 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3",
+    sugarChain:"Disaccharide PPD. Phân lập cùng Majonoside F1 trong điều tra thứ 2.",
+    chuyenHoa:"→ PPD",
+    dacDiem:"Phân lập cùng đợt với majoroside F1 trong điều tra hóa học lần 2.",
+    hoatTinh:"Đang nghiên cứu",
+  },
+  {
+    stt:52, ten:"Vinaginsenoside R10 (V-R10)", tenVi:"Vinaginsenoside R10", nhom:"PPD",
+    soGocDuong:2, absScore:4, absMuc:"thap", absText:"Thấp",
+    absPct:2,
+    unique:true,
+    formula:"C₄₂H₇₂O₁₃", mw:"785.0 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"2 gốc đường",
+    viTriGanDuong:"C-3 và C-20",
+    sugarChain:"Disaccharide. Phân lập cùng Rh5 và V-R25.",
+    chuyenHoa:"→ PPD",
+    dacDiem:"Phân lập cùng ginsenoside Rh5 (Tran et al. 2001).",
+    hoatTinh:"Bảo vệ gan",
+  },
+  {
+    stt:53, ten:"Vinaginsenoside R25 (V-R25)", tenVi:"Vinaginsenoside R25", nhom:"PPD",
+    soGocDuong:1, absScore:7, absMuc:"tb", absText:"Thấp–trung bình (1 đường)",
+    absPct:5,
+    unique:true,
+    formula:"C₃₆H₆₂O₈", mw:"622.9 g/mol", skeleton:"Protopanaxadiol-type",
+    luongDuong:"1 gốc đường (β-D-Glc)",
+    viTriGanDuong:"C-3: β-D-Glc",
+    sugarChain:"C3-O-β-Glc. Saponin PPD mới nhất phát hiện (Tran 2001).",
+    chuyenHoa:"→ PPD",
+    dacDiem:"Mới phát hiện cùng Rh5. 1 đường → hấp thu khá. Đặc trưng SNL.",
+    hoatTinh:"Bảo vệ gan",
+  },
+
+  // ══════════════════════════════════
+  // NHÓM OA — OLEANOLIC ACID
+  // ══════════════════════════════════
+  {
+    stt:54, ten:"Ginsenoside R0 (Chikusetsusaponin V)", tenVi:"Ginsenoside R0", nhom:"OA",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp (cơ chế khác PPD/PPT)",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₇₆O₁₉", mw:"957.1 g/mol", skeleton:"Oleanolic acid (pentacyclic)",
+    luongDuong:"3 gốc đường (β-D-GlcA + β-D-Glc + β-D-Glc)",
+    viTriGanDuong:"C-3: β-GlcA-(1→3)-β-Glc-(1→2)-β-Glc",
+    sugarChain:"Glucuronic acid tại đầu chuỗi = hấp thu rất kém. Khung 5 vòng khác hẳn PPD/PPT.",
+    chuyenHoa:"→ Oleanolic acid aglycon (cơ chế độc lập, khác PPD/PPT)",
+    dacDiem:"Khung oleanolic acid (pentacyclic) hoàn toàn khác dammarane. Cơ chế hấp thu khác.",
+    hoatTinh:"Chống viêm, bảo vệ gan, hạ lipid máu",
+  },
+  {
+    stt:55, ten:"Hemsloside Ma3", tenVi:"Hemsloside Ma3", nhom:"OA",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₅₄H₈₆O₂₄", mw:"1119.2 g/mol", skeleton:"Oleanolic acid (pentacyclic)",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-3 và C-28",
+    sugarChain:"Saponin bidentate — đường cả 2 đầu phân tử (C3 và C28). Hấp thu kém nhất.",
+    chuyenHoa:"→ Oleanolic acid",
+    dacDiem:"Ban đầu phát hiện ở Hemsleya macrosperma (họ Bầu). Phân lập lần đầu trong SNL (Nguyen 1994).",
+    hoatTinh:"Chống ung thư, kháng khuẩn",
+  },
+  {
+    stt:56, ten:"Chikusetsusaponin IV", tenVi:"Chikusetsusaponin IV", nhom:"OA",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₂H₆₆O₁₄", mw:"795.0 g/mol", skeleton:"Oleanolic acid (pentacyclic)",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-3: trisaccharide",
+    sugarChain:"C3-trisaccharide. Phát hiện lần đầu trong cấy mô tế bào SNL (Frontiers 2024).",
+    chuyenHoa:"→ Oleanolic acid",
+    dacDiem:"Phát hiện lần đầu trong cấy mô SNL (2024). Không có trong nghiên cứu cũ.",
+    hoatTinh:"Kháng khuẩn, chống viêm",
+  },
+  {
+    stt:57, ten:"Notoginsenoside Fc (N-Fc)", tenVi:"Notoginsenoside Fc", nhom:"OA",
+    soGocDuong:3, absScore:2, absMuc:"ratthap", absText:"Rất thấp",
+    absPct:1,
+    unique:false,
+    formula:"C₄₈H₇₆O₁₉", mw:"957.1 g/mol", skeleton:"Oleanolic acid (pentacyclic)",
+    luongDuong:"3 gốc đường",
+    viTriGanDuong:"C-3 và C-28",
+    sugarChain:"Cấu trúc tương tự R0 nhưng chuỗi đường khác. Nhiều trong lá SNL hơn rễ.",
+    chuyenHoa:"→ Oleanolic acid",
+    dacDiem:"Nhiều trong lá sâm Ngọc Linh. Phân biệt với OA saponin của P. notoginseng.",
+    hoatTinh:"Chống oxy hóa",
+  },
+];
+
+// ══════════════════════════════════
+// RENDER ENGINE
+// ══════════════════════════════════
+let currentFilter = "ALL";
+let currentSort = "default";
+let openCard = null;
+
+function getAbsColor(muc) {
+  if (muc==="cao") return {bg:"#dcfce7",color:"#15803d"};
+  if (muc==="tb")  return {bg:"#fef9c3",color:"#854d0e"};
+  if (muc==="thap")return {bg:"#fee2e2",color:"#991b1b"};
+  return {bg:"#f1f5f9",color:"#475569"};
+}
+function getNhomColor(nhom) {
+  if (nhom==="OCT") return {bg:"#fef3c7",color:"#92400e",border:"#fcd34d"};
+  if (nhom==="PPT") return {bg:"#dbeafe",color:"#1e3a8a",border:"#93c5fd"};
+  if (nhom==="PPD") return {bg:"#dcfce7",color:"#14532d",border:"#86efac"};
+  return {bg:"#f3e8ff",color:"#3b0764",border:"#c4b5fd"};
+}
+
+function renderList() {
+  const q = document.getElementById("searchInput").value.toLowerCase();
+  let data = DATA.filter(s => {
+    const matchGroup = currentFilter==="ALL" || s.nhom===currentFilter;
+    const matchQ = !q || s.ten.toLowerCase().includes(q) || s.hoatTinh.toLowerCase().includes(q)
+      || s.dacDiem.toLowerCase().includes(q) || (s.formula||"").toLowerCase().includes(q);
+    return matchGroup && matchQ;
+  });
+  if (currentSort==="absorb") data.sort((a,b)=>b.absScore-a.absScore);
+  else if (currentSort==="sugar") data.sort((a,b)=>a.soGocDuong-b.soGocDuong);
+  else if (currentSort==="unique") data.sort((a,b)=>(b.unique?1:0)-(a.unique?1:0)||a.stt-b.stt);
+  else data.sort((a,b)=>a.stt-b.stt);
+  
+  document.getElementById("resultCount").textContent = data.length + " / 57 saponin";
+  
+  const list = document.getElementById("saponinList");
+  if (data.length===0) { list.innerHTML='<div class="no-results">🔍 Không tìm thấy saponin nào</div>'; return; }
+  
+  list.innerHTML = data.map(s => {
+    const nc = getNhomColor(s.nhom);
+    const ac = getAbsColor(s.absMuc);
+    const barPct = Math.round((s.absPct/40)*100);
+    const barColor = s.absMuc==="cao"?"#16a34a":s.absMuc==="tb"?"#ca8a04":s.absMuc==="thap"?"#dc2626":"#94a3b8";
+    return `
+    <div class="card${s.unique?' unique':''}" id="card-${s.stt}" onclick="toggleCard(${s.stt})">
+      <div class="card-header">
+        <span class="card-num">${s.stt}</span>
+        <div class="card-main">
+          <div class="card-name">${s.ten}</div>
+          ${s.tenVi!==s.ten?`<div class="card-name-vi">${s.tenVi}</div>`:''}
+          <div class="card-tags">
+            <span class="tag" style="background:${nc.bg};color:${nc.color};border:1px solid ${nc.border}">${s.nhom}</span>
+            <span class="tag" style="background:${ac.bg};color:${ac.color}">${s.absText.split(' ')[0]}</span>
+            ${s.unique?'<span class="tag" style="background:#fef08a;color:#713f12">★ Đặc trưng SNL</span>':''}
+            <span class="tag" style="background:#f1f5f9;color:#475569">${s.soGocDuong===0?'Aglycon':s.soGocDuong+' đường'}</span>
+          </div>
+        </div>
+        <span class="card-chevron">▼</span>
+      </div>
+      <div class="card-detail">
+        <!-- CHEM STRUCTURE -->
+        <div class="detail-section">
+          <div class="detail-title amber">🧪 Cấu trúc hóa học</div>
+          <div class="chem-box">
+            <div class="chem-row"><span class="chem-key">Công thức:</span><span class="chem-val">${s.formula}</span></div>
+            <div class="chem-row"><span class="chem-key">Phân tử lượng:</span><span class="chem-val">${s.mw}</span></div>
+            <div class="chem-row"><span class="chem-key">Khung:</span><span class="chem-val">${s.skeleton}</span></div>
+            <div class="chem-row"><span class="chem-key">Số gốc đường:</span><span class="chem-val">${s.soGocDuong===0?'Không (aglycon)':s.soGocDuong+' gốc — '+s.luongDuong}</span></div>
+            ${s.soGocDuong>0?`<div class="sugar-chain"><b>Vị trí gắn đường:</b> ${s.viTriGanDuong}<br><b>Chuỗi đường:</b> ${s.sugarChain}</div>`:'<div class="sugar-chain" style="background:#f0fdf4"><b>Aglycon</b> — không có gốc đường → hấp thu trực tiếp</div>'}
+          </div>
+        </div>
+        <!-- ABSORPTION -->
+        <div class="detail-section">
+          <div class="detail-title">📊 Khả năng hấp thụ</div>
+          <div class="abs-bar-wrap">
+            <div class="abs-bar"><div class="abs-bar-fill" style="width:${barPct}%;background:${barColor}"></div></div>
+            <span class="abs-pct" style="color:${barColor}">${s.absText}</span>
+          </div>
+          <div class="detail-text" style="margin-top:6px"><b>Chuyển hóa:</b> ${s.chuyenHoa}</div>
+        </div>
+        <!-- PHARMACOLOGY -->
+        <div class="detail-section">
+          <div class="detail-title blue">💊 Hoạt tính dược lý</div>
+          <div class="detail-text">${s.hoatTinh}</div>
+        </div>
+        <!-- NOTES -->
+        <div class="detail-section">
+          <div class="detail-title purple">📋 Đặc điểm nổi bật</div>
+          <div class="detail-text">${s.dacDiem}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function toggleCard(stt) {
+  const card = document.getElementById("card-"+stt);
+  if (openCard && openCard!==card) openCard.classList.remove("open");
+  card.classList.toggle("open");
+  openCard = card.classList.contains("open") ? card : null;
+  if (openCard) setTimeout(()=>openCard.scrollIntoView({behavior:"smooth",block:"nearest"}),100);
+}
+
+// FILTER BUTTONS
+document.querySelectorAll("[data-group]").forEach(btn => {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll("[data-group]").forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+    currentFilter = this.dataset.group;
+    renderList();
+  });
+});
+document.querySelectorAll("[data-sort]").forEach(btn => {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll("[data-sort]").forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+    currentSort = this.dataset.sort;
+    renderList();
+  });
+});
+document.getElementById("searchInput").addEventListener("input", renderList);
+
+renderList();
+</script>
+
+<script>
+// ── SERVICE WORKER ──────────────────────────────
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = 'sam-saponin-v1';
+    self.addEventListener('install', e => {
+      e.waitUntil(
+        caches.open(CACHE).then(c => c.addAll(['./']))
+      );
+      self.skipWaiting();
+    });
+    self.addEventListener('activate', e => {
+      e.waitUntil(caches.keys().then(keys =>
+        Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))
+      ));
+      self.clients.claim();
+    });
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('./')))
+      );
+    });
+  `;
+  const blob = new Blob([swCode], {type: 'application/javascript'});
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).then(() => {
+    console.log('SW registered');
+  }).catch(e => console.log('SW error:', e));
+}
+
+// ── INSTALL BANNER ──────────────────────────────
+let deferredPrompt = null;
+
+const banner = document.createElement('div');
+banner.id = 'install-banner';
+banner.innerHTML = `
+  <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0">
+    <span style="font-size:22px">🌿</span>
+    <div>
+      <div style="font-weight:700;font-size:13px">Cài đặt ứng dụng</div>
+      <div style="font-size:11px;opacity:0.8">Dùng offline, không cần mạng</div>
+    </div>
+  </div>
+  <button id="btn-install" style="background:#f59e0b;color:#1a1a1a;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Cài ngay</button>
+  <button id="btn-dismiss" style="background:rgba(255,255,255,0.15);color:white;border:none;border-radius:8px;padding:8px 10px;font-size:12px;cursor:pointer">✕</button>
+`;
+Object.assign(banner.style, {
+  position:'fixed', bottom:'0', left:'0', right:'0',
+  background:'linear-gradient(135deg,#1a3a2a,#2d6040)',
+  color:'white', padding:'14px 16px', display:'none',
+  alignItems:'center', gap:'10px', zIndex:'9999',
+  boxShadow:'0 -4px 20px rgba(0,0,0,0.3)',
+  fontFamily:'-apple-system,Segoe UI,sans-serif',
+  borderTop:'1px solid rgba(255,255,255,0.1)'
+});
+
+document.body.appendChild(banner);
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  banner.style.display = 'flex';
+});
+
+document.getElementById('btn-install').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  banner.style.display = 'none';
+  deferredPrompt.prompt();
+  const {outcome} = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  if (outcome === 'accepted') {
+    showToast('✅ Đã cài đặt thành công!');
+  }
+});
+
+document.getElementById('btn-dismiss').addEventListener('click', () => {
+  banner.style.display = 'none';
+});
+
+window.addEventListener('appinstalled', () => {
+  banner.style.display = 'none';
+  showToast('✅ Sâm Saponin đã được cài đặt!');
+});
+
+// ── TOAST ──────────────────────────────────────
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  Object.assign(t.style, {
+    position:'fixed', top:'20px', left:'50%', transform:'translateX(-50%)',
+    background:'#1e293b', color:'white', padding:'10px 20px',
+    borderRadius:'20px', fontSize:'13px', fontWeight:'600',
+    zIndex:'10000', boxShadow:'0 4px 12px rgba(0,0,0,0.3)',
+    fontFamily:'-apple-system,Segoe UI,sans-serif',
+    whiteSpace:'nowrap'
+  });
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+// ── OFFLINE INDICATOR ──────────────────────────
+function updateOnlineStatus() {
+  const existing = document.getElementById('offline-bar');
+  if (!navigator.onLine) {
+    if (!existing) {
+      const bar = document.createElement('div');
+      bar.id = 'offline-bar';
+      bar.textContent = '📴 Đang dùng offline';
+      Object.assign(bar.style, {
+        position:'fixed', top:'0', left:'0', right:'0',
+        background:'#7c3aed', color:'white', textAlign:'center',
+        padding:'6px', fontSize:'12px', fontWeight:'600',
+        zIndex:'9998', fontFamily:'-apple-system,Segoe UI,sans-serif'
+      });
+      document.body.appendChild(bar);
+    }
+  } else {
+    if (existing) existing.remove();
+  }
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+</script>
+
+</body>
+</html>
